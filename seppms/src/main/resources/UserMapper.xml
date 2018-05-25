@@ -2,24 +2,67 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="users">
+<mapper namespace="sys_user">
     <!--习惯以表名作为名字空间-->
     <insert id="insert">
 --         name与User的属性一致
-        INSERT INTO users(name, age) VALUES (#{name}, #{age})
+        -- INSERT INTO users(avatar) VALUES (#{name}, #{age})
+        INSERT INTO sys_user(
+          avatar,
+          number,
+          password,
+          name,
+          sex,
+          classname,
+          email,
+          specialty,
+          hobby,
+          roleid,
+          status,
+          createtime)
+        VALUES (
+          #{avatar},
+          #{number},
+          #{password},
+          #{name},
+          #{sex},
+          #{calssName},
+          #{email},
+          #{specialty},
+          #{hobby},
+          #{roleId},
+          #{status},
+          #{createTime})
     </insert>
+    <!--TODO-->
     <update id="update">
         UPDATE users SET name = #{name},age = #{age} WHERE id = #{id}
     </update>
-    <select id="selectOne" resultMap="RM_User">
-        select
-          u.id uid,
-          u.name uname,
-          u.age uage,
-          o.id oid,
-          o.orderno oorderno
-        from users u
-          left outer join orders o on u.id = o.uid where u.id = #{id}
+    <select id="selectOne" parameterType="int" resultType="_User">
+--         select
+--           u.id uid,
+--           u.name uname,
+--           u.age uage,
+--           o.id oid,
+--           o.orderno oorderno
+--         from users u
+--           left outer join orders o on u.id = o.uid where u.id = #{id}
+        SELECT
+          id,
+          avatar,
+          number,
+          password,
+          name,
+          sex,
+          classname,
+          email,
+          specialty,
+          hobby,
+          roleid,
+          status,
+          createtime
+        FROM sys_user
+        WHERE id = #{id}
     </select>
     <resultMap id="RM_User" type="_User">
         <id property="id" column="uid" />
@@ -31,15 +74,30 @@
             <result property="orderNo" column="oorderno"/>
         </collection>
     </resultMap>
-    <select id="selectAll" resultMap="RM_User">
-         select
-          u.id uid,
-          u.name uname,
-          u.age uage,
-          o.id oid,
-          o.orderno oorderno
-        from users u
-          left outer join orders o on u.id = o.uid
+    <select id="selectAll" resultType="_User">
+--          select
+--           u.id uid,
+--           u.name uname,
+--           u.age uage,
+--           o.id oid,
+--           o.orderno oorderno
+--         from users u
+--           left outer join orders o on u.id = o.uid
+        SELECT
+          id,
+          avatar,
+          number,
+          password,
+          name,
+          sex,
+          classname,
+          email,
+          specialty,
+          hobby,
+          roleid,
+          status,
+          createtime
+        FROM sys_user
     </select>
     <delete id="delete" parameterType="int">
         DELETE FROM users WHERE id = #{id}

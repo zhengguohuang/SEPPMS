@@ -25,11 +25,11 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements BaseDao<User> {
     }
 
     public User selectOne(Integer id) {
-        return getSqlSession().selectOne("users.selectOne", id);
+        return getSqlSession().selectOne("sys_user.selectOne", id);
     }
 
     public List<User> selectAll() {
-        return getSqlSession().selectList("users.selectAll");
+        return getSqlSession().selectList("sys_user.selectAll");
     }
 
     /**
