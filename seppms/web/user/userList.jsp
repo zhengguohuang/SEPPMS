@@ -9,7 +9,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-    <title>selectOne.jsp</title>
+    <title>selectList.jsp</title>
     <link rel="stylesheet" type="text/css" href="../css/userList.css">
 </head>
 <body>
@@ -33,6 +33,7 @@ hello
 
             <td>删除</td>
             <td>修改</td>
+            <td>查看详情</td>
         </tr>
         <c:forEach items="${users}" var="u">
             <tr>
@@ -52,6 +53,7 @@ hello
 
                 <td><a href='<c:url value="/user/deleteUser?uid=${u.id}"/> '>删除</a> </td>
                 <td><a href='<c:url value="/user/editUser?uid=${u.id}"/> '>修改</a> </td>
+                <td><a href='<c:url value="/user/findone?uid=${u.id}"/> '>查看详情</a> </td>
             </tr>
         </c:forEach>
             <tr>

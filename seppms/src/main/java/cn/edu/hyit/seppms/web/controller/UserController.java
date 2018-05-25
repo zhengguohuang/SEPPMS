@@ -24,6 +24,13 @@ public class UserController {
         return "/user/userList";
     }
 
+    @RequestMapping("/user/findone")
+    public String findOne(Model m, @RequestParam("uid") Integer uid){
+        User user = us.selectOne(uid);
+        m.addAttribute("user", user);
+        return "/user/oneUser";
+    }
+
     @RequestMapping("/user/deleteUser")
     public String delete(@RequestParam("uid") Integer uid){
         us.delete(uid);
