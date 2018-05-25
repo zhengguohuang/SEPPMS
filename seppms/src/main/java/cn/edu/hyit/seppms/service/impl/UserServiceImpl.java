@@ -2,6 +2,7 @@ package cn.edu.hyit.seppms.service.impl;
 
 
 import cn.edu.hyit.seppms.dao.BaseDao;
+import cn.edu.hyit.seppms.dao.impl.UserDaoImpl;
 import cn.edu.hyit.seppms.domain.Item;
 import cn.edu.hyit.seppms.domain.Order;
 import cn.edu.hyit.seppms.domain.User;
@@ -16,6 +17,8 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
     @Resource(name = "itemDao")
     private BaseDao<Item> itemDao;
 
+    @Resource(name = "userDao")
+    private UserDaoImpl dao;
     // 重写该方法注入指定dao对象
     @Override
     @Resource(name = "userDao")
@@ -48,6 +51,9 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
         }
     }
 
+    public User selectByNumber(String number) {
+        return dao.selectByNumber(number);
+    }
 
 
 }

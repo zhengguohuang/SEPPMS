@@ -103,6 +103,25 @@
           createtime
         FROM sys_user
     </select>
+    <select id="selectByNumber" parameterType="string" resultMap="RM_User">
+        SELECT
+        id,
+        avatar,
+        number,
+        password,
+        name,
+        sex,
+        classname,
+        email,
+        specialty,
+        hobby,
+        roleid,
+        status,
+        createtime
+        FROM sys_user
+        WHERE number = #{number}
+    </select>
+
     <delete id="delete" parameterType="int">
         DELETE FROM users WHERE id = #{id}
     </delete>

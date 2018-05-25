@@ -84,4 +84,32 @@ public class UserController {
         m.addAttribute("pages", pages);
         return "user/userList";
     }
+
+    /**
+     * 用户登录
+     * @param m
+     * @return
+     */
+    @RequestMapping("/user/login")
+    public String login(Model m){
+        return "user/login";
+    }
+
+    /**
+     * vertify登录
+     */
+    @RequestMapping(value = "/user/vertify", method = RequestMethod.POST)
+    public String vertify(Model m, @RequestParam("number") String number, @RequestParam("password") String password){
+        User user = us.selectByNumber(number);
+        m.addAttribute("user", user);
+        if (user != null){
+            if (password != null && !password.equals("") && password.equals(user.getPassword())){
+                return "user/userHome";
+            }
+        }
+        else {
+            return "/user/login";
+        }
+        return "/user/login";
+    }
 }

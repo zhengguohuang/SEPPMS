@@ -8,4 +8,5 @@ public interface UserService extends BaseService<User> {
     public void longTx();
 
     void save(User u);
+    public User selectByNumber(String number);
 }

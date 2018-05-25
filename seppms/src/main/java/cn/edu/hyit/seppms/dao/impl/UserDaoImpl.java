@@ -45,4 +45,8 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements BaseDao<User> {
     public int selectCount() {
         return getSqlSession().selectOne("users.selectCount");
     }
+
+    public User selectByNumber(String number){
+        return getSqlSession().selectOne("sys_user.selectByNumber", number);
+    }
 }
