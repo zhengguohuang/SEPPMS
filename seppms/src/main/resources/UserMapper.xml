@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="users">
+    <!--习惯以表名作为名字空间-->
+    <insert id="insert">
+--         name与User的属性一致
+        INSERT INTO users(name, age) VALUES (#{name}, #{age})
+    </insert>
+    <update id="update">
+        UPDATE users SET name = #{name},age = #{age} WHERE id = #{id}
+    </update>
+    <select id="selectOne" resultMap="RM_User">
+        select
+          u.id uid,
+          u.name uname,
+          u.age uage,
+          o.id oid,
+          o.orderno oorderno
+        from users u
+          left outer join orders o on u.id = o.uid where u.id = #{id}
+    </select>
+    <resultMap id="RM_User" type="_User">
+        <id property="id" column="uid" />
+        <result property="name" column="uname"/>
+        <result property="age" column="uage"/>
+        <!--映射一对多关联关系-->
+        <collection property="orders" ofType="_Order">
+            <id property="id" column="oid"/>
+            <result property="orderNo" column="oorderno"/>
+        </collection>
+    </resultMap>
+    <select id="selectAll" resultMap="RM_User">
+         select
+          u.id uid,
+          u.name uname,
+          u.age uage,
+          o.id oid,
+          o.orderno oorderno
+        from users u
+          left outer join orders o on u.id = o.uid
+    </select>
+    <delete id="delete" parameterType="int">
+        DELETE FROM users WHERE id = #{id}
+    </delete>
+    <select id="selectPage" resultType="_User">
+        SELECT * FROM users u limit #{offset}, #{limit}
+    </select>
+
+    <select id="selectCount" resultType="int">
+        SELECT count(*) FROM users u
+    </select>
+</mapper>

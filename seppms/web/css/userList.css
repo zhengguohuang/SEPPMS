@@ -1,0 +1,19 @@
+table{
+    border: 1px solid cadetblue;
+    border-collapse: collapse;
+    height: 150px;
+    width: 400px;
+}
+
+table td{
+    text-align: center;
+}
+
+table tr:nth-child(even){
+    background-color: beige;
+}
+
+table tr:first-child{
+    background-color: darkcyan;
+    color: white;
+}
