@@ -1,12 +1,8 @@
 package cn.edu.hyit.seppms.domain;
 public class reply {
-	//????id
 	private Integer id;
-	//?????
 	private Integer userid;
-	//????id
 	private Integer topicid;
-	//???????
 	private String content;
 	
 	public Integer getId() {
