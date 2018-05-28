@@ -23,8 +23,6 @@ public class User {
     private String specialty;
     // 爱好
     private String hobby;
-    // 角色id
-    private int roleId;
     // 状态(1:启用 2:冻结 3:删除)
     private int status;
     // 创建时间
@@ -109,14 +107,6 @@ public class User {
 
     public void setHobby(String hobby) {
         this.hobby = hobby;
-    }
-
-    public int getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(int roleId) {
-        this.roleId = roleId;
     }
 
     public int getStatus() {
