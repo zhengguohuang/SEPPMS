@@ -63,4 +63,6 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements BaseDao<User> {
         System.out.println(list.get(0).getPassword());
         return list.get(0);
     }
+
+
 }

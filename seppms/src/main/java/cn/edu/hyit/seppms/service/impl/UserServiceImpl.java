@@ -10,6 +10,7 @@ import cn.edu.hyit.seppms.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service("userService")
 public class UserServiceImpl extends BaseServiceImpl<User> implements UserService {
@@ -19,6 +20,7 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
 
     @Resource(name = "userDao")
     private UserDaoImpl dao;
+
     // 重写该方法注入指定dao对象
     @Override
     @Resource(name = "userDao")
@@ -58,6 +60,8 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
     public User getUserByNumber(String number) {
         return dao.getUserByNumber(number);
     }
+
+
 
 
 }

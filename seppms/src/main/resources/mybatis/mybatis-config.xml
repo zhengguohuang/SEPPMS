@@ -5,6 +5,7 @@
 <configuration>
     <typeAliases>
         <typeAlias type="cn.edu.hyit.seppms.domain.User" alias="_User"/>
+        <typeAlias type="cn.edu.hyit.seppms.domain.Role" alias="_Role"/>
         <typeAlias type="cn.edu.hyit.seppms.domain.Order" alias="_Order"/>
         <typeAlias type="cn.edu.hyit.seppms.domain.Item" alias="_Item"/>
 
@@ -14,5 +15,6 @@
         <mapper resource="UserMapper.xml"/>
         <mapper resource="OrderMapper.xml"/>
         <mapper resource="ItemMapper.xml"/>
+        <mapper resource="RoleMapper.xml"/>
     </mappers>
 </configuration>

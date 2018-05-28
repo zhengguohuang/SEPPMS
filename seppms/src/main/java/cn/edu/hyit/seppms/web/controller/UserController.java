@@ -133,6 +133,9 @@ public class UserController {
         catch (Exception e){
             return e.getMessage();
         }
-        return "登录成功";
+        if (subject.hasRole("admin")){
+            return "有admin权限";
+        }
+        return "无admin权限";
     }
 }

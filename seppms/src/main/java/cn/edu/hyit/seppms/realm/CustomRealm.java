@@ -2,6 +2,7 @@ package cn.edu.hyit.seppms.realm;
 
 import cn.edu.hyit.seppms.dao.impl.UserDaoImpl;
 import cn.edu.hyit.seppms.domain.User;
+import cn.edu.hyit.seppms.service.RoleService;
 import cn.edu.hyit.seppms.service.UserService;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -15,26 +16,26 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class CustomRealm extends AuthorizingRealm {
 
     @Resource(name = "userService")
     private UserService us;
 
+    @Resource(name = "roleService")
+    private RoleService rs;
     /**
      * 用来做授权
      * @param principalCollection
      * @return
      */
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-        String userName = (String) principalCollection.getPrimaryPrincipal();
+        String number = (String) principalCollection.getPrimaryPrincipal();
         // 从数据库或者缓存中获取角色数据
-        Set<String> roles = getRolesByUserName(userName);
-        Set<String> permissions = getPermissionsByUserName(userName);
+        // TODO
+        Set<String> roles = getRolesByNumber(number);
+        Set<String> permissions = getPermissionsByUserName(number);
 
         SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
         simpleAuthorizationInfo.setRoles(roles);
@@ -49,12 +50,12 @@ public class CustomRealm extends AuthorizingRealm {
         return permissions;
     }
 
-    private Set<String> getRolesByUserName(String userName) {
+    private Set<String> getRolesByNumber(String number) {
 
-        Set<String> roles = new HashSet<String>();
-        roles.add("admin");
-        roles.add("user");
-        return roles;
+        // TODO
+        List<String> list = rs.getRolesByNumber(number);
+        Set<String> sets = new HashSet<String>(list);
+        return sets;
     }
 
     /**
