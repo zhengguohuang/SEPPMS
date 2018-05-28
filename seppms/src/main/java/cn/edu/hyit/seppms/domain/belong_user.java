@@ -1,10 +1,10 @@
-
+package cn.edu.hyit.seppms.domain;
 public class belong_user {
-	//Ö÷¼üid
+	//ï¿½ï¿½ï¿½ï¿½id
 	private Integer id;
-	//ÓÃ»§id
+	//ï¿½Ã»ï¿½id
 	private Integer userid;
-	//ÏîÄ¿×éid
+	//ï¿½ï¿½Ä¿ï¿½ï¿½id
 	private Integer groupid;
 	
 	public Integer getId() {

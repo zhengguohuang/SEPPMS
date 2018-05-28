@@ -14,7 +14,7 @@ public class UserServiceImplTest {
      */
     @Test
     public void selectAll(){
-        ApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
+        ApplicationContext ac = new ClassPathXmlApplicationContext("spring/beans.xml");
         UserService userService = (UserService) ac.getBean("userService");
         List<User> users = userService.selectAll();
         for (User user : users) {
@@ -27,7 +27,7 @@ public class UserServiceImplTest {
      */
     @Test
     public void selectOne(){
-        ApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
+        ApplicationContext ac = new ClassPathXmlApplicationContext("spring/beans.xml");
         UserService userService = (UserService) ac.getBean("userService");
         User user = userService.selectOne(1);
         System.out.println(user.getId() + "\t" + user.getNumber() +"\t" + user.getName() + "\t" + user.getPassword());

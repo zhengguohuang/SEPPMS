@@ -1,14 +1,14 @@
-
+package cn.edu.hyit.seppms.domain;
 public class teacher_task {
-	//Ö÷¼üid
+	//ï¿½ï¿½ï¿½ï¿½id
 	private Integer id;
-	//ÀÏÊ¦id
+	//ï¿½ï¿½Ê¦id
 	private Integer teacherid;
-	//ÈÎÎñÄÚÈİ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	private String task;
-	//ÈÎÎñÊéurl
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½url
 	private String mandate;
-	//ÈÎÎñ´ó¸Ù
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	private String outline;
 	
 	public Integer getId() {

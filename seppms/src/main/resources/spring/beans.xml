@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                            http://www.springframework.org/schema/context/spring-context-4.3.xsd
+                           http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+                           http://www.springframework.org/schema/aop
+                           http://www.springframework.org/schema/aop/spring-aop-4.3.xsd" default-autowire="byType">
+    <!--配置事务特征-->
+    <tx:advice id="txAdvice" transaction-manager="txManager">
+        <tx:attributes>
+            <tx:method name="*" propagation="REQUIRED" isolation="DEFAULT"/>
+        </tx:attributes>
+    </tx:advice>
+    <!--配置事务切面-->
+    <aop:config>
+        <aop:advisor advice-ref="txAdvice" pointcut="execution(* *..*Service.*(..))"/>
+    </aop:config>
+    <!--扫描包组件-->
+    <context:component-scan base-package="cn.edu.hyit.seppms.dao,cn.edu.hyit.seppms.service"/>
+    <!--数据源-->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/seppms?user=root&amp;password=root&amp;useUnicode=true&amp;characterEncoding=utf-8"/>
+        <property name="user" value="root"/>
+        <property name="password" value="root"/>
+        <property name="maxPoolSize" value="10"/>
+        <property name="minPoolSize" value="2"/>
+        <property name="initialPoolSize" value="3"/>
+        <property name="acquireIncrement" value="2"/>
+    </bean>
+    <!--mybatis整合spring核心类-->
+    <bean id="sf" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--指定数据源-->
+        <property name="dataSource" ref="dataSource"/>
+        <!--指定mybatis配置文件-->
+        <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
+    </bean>
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+
+
+</beans>

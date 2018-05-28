@@ -10,8 +10,6 @@ import org.junit.Test;
 import java.io.IOException;
 import java.io.InputStream;
 
-import static org.junit.Assert.*;
-
 public class UserDaoImplTest {
 
     @Test
@@ -21,7 +19,7 @@ public class UserDaoImplTest {
 
     @Test
     public void selectOne() throws IOException {
-        String resource = "mybatis-config.xml";
+        String resource = "mybatis/mybatis-config.xml";
         InputStream inputStream = Resources.getResourceAsStream(resource);
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         SqlSession sqlSession = sqlSessionFactory.openSession();

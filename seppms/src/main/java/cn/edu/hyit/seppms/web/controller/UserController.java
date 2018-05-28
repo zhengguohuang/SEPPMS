@@ -2,11 +2,15 @@ package cn.edu.hyit.seppms.web.controller;
 
 import cn.edu.hyit.seppms.domain.User;
 import cn.edu.hyit.seppms.service.UserService;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -111,5 +115,24 @@ public class UserController {
             return "/user/login";
         }
         return "/user/login";
+    }
+
+    /**
+     * shiro 权限控制
+     * @param user
+     * @return
+     */
+    @RequestMapping(value = "/subLogin", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
+    @ResponseBody
+    public String subLogin(User user){
+        Subject subject = SecurityUtils.getSubject();
+        UsernamePasswordToken token = new UsernamePasswordToken(user.getNumber(), user.getPassword());
+        try {
+            subject.login(token);
+        }
+        catch (Exception e){
+            return e.getMessage();
+        }
+        return "登录成功";
     }
 }

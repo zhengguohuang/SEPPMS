@@ -1,12 +1,12 @@
-
+package cn.edu.hyit.seppms.domain;
 public class reply {
-	//主键id
+	//????id
 	private Integer id;
-	//回复者
+	//?????
 	private Integer userid;
-	//话题id
+	//????id
 	private Integer topicid;
-	//回复内容
+	//???????
 	private String content;
 	
 	public Integer getId() {

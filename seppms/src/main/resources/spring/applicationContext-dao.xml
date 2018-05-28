@@ -12,18 +12,6 @@
                            http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
                            http://www.springframework.org/schema/aop
                            http://www.springframework.org/schema/aop/spring-aop-4.3.xsd" default-autowire="byType">
-    <!--配置事务特征-->
-    <tx:advice id="txAdvice" transaction-manager="txManager">
-        <tx:attributes>
-            <tx:method name="*" propagation="REQUIRED" isolation="DEFAULT"/>
-        </tx:attributes>
-    </tx:advice>
-    <!--配置事务切面-->
-    <aop:config>
-        <aop:advisor advice-ref="txAdvice" pointcut="execution(* *..*Service.*(..))"/>
-    </aop:config>
-    <!--扫描包组件-->
-    <context:component-scan base-package="cn.edu.hyit.seppms.dao,cn.edu.hyit.seppms.service"/>
     <!--数据源-->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="driverClass" value="com.mysql.jdbc.Driver"/>
@@ -40,9 +28,12 @@
         <!--指定数据源-->
         <property name="dataSource" ref="dataSource"/>
         <!--指定mybatis配置文件-->
-        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
     </bean>
     <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
+
+
+
 </beans>
