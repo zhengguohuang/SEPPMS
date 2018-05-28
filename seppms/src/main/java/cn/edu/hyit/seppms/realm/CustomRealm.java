@@ -1,5 +1,7 @@
 package cn.edu.hyit.seppms.realm;
 
+import cn.edu.hyit.seppms.dao.impl.UserDaoImpl;
+import cn.edu.hyit.seppms.domain.User;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -11,6 +13,7 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 
+import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -18,19 +21,8 @@ import java.util.Set;
 
 public class CustomRealm extends AuthorizingRealm {
 
-    Map<String, String> userMap = new HashMap<String, String>(16);
-
-    {
-        // 不加密
-//        userMap.put("Mark", "123");
-        // MD5加密
-//        userMap.put("Mark", "202cb962ac59075b964b07152d234b70");
-        // md5盐加密
-        userMap.put("1151401107", "a81082604404c078e80f8bf501133abe");
-
-        // 设置realm的name
-        super.setName("customRealm");
-    }
+    @Resource(name = "userDao")
+    private UserDaoImpl dao;
 
     /**
      * 用来做授权
@@ -72,34 +64,37 @@ public class CustomRealm extends AuthorizingRealm {
      */
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         // 1.从主体传过来的认证信息中，获得用户名
-        String userName = (String) authenticationToken.getPrincipal();
+        String number = (String) authenticationToken.getPrincipal();
 
         // 2.通过用户名到数据库中获取凭证
-        String password = getPasswordByUserName(userName);
+        String password = getPasswordByNumber(number);
         if (password == null){
             return null;
         }
-        SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(userName, password, "customRealm");
+        SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(number, password, "customRealm");
         // 使用salt加密时要讲salt设置进authenticationInfo
-        authenticationInfo.setCredentialsSalt(ByteSource.Util.bytes("1151401107"));
+        authenticationInfo.setCredentialsSalt(ByteSource.Util.bytes(number));
         return authenticationInfo;
     }
 
     /**
-     * 模拟数据库查询凭证
-     * @param userName
+     * 数据库查询凭证
+     * @param number
      * @return
      */
-    private String getPasswordByUserName(String userName) {
-
-        return (String) userMap.get(userName);
+    private String getPasswordByNumber(String number) {
+        User user = dao.getUserByNumber(number);
+        if (user != null){
+            return user.getPassword();
+        }
+        return null;
     }
 
     public static void main(String[] args) {
         // 普通md5加密
 //        Md5Hash md5Hash = new Md5Hash("123");
         // md5盐加密
-        Md5Hash md5Hash = new Md5Hash("123", "1151401107");//b38ac18016d255ee4e9a364fb6490ebf
+        Md5Hash md5Hash = new Md5Hash("123", "1151401108");//a81082604404c078e80f8bf501133abe
         System.out.println(md5Hash.toString());
 
     }

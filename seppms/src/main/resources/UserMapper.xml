@@ -132,4 +132,22 @@
     <select id="selectCount" resultType="int">
         SELECT count(*) FROM users u
     </select>
+    <select id="getUserByNumber" parameterType="string" resultMap="RM_User">
+        SELECT
+            id,
+            avatar,
+            number,
+            password,
+            name,
+            sex,
+            classname,
+            email,
+            specialty,
+            hobby,
+            roleid,
+            status,
+            createtime
+        FROM sys_user
+        WHERE number = #{number}
+    </select>
 </mapper>
