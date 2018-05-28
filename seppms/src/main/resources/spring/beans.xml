@@ -24,27 +24,7 @@
     </aop:config>
     <!--扫描包组件-->
     <context:component-scan base-package="cn.edu.hyit.seppms.dao,cn.edu.hyit.seppms.service"/>
-    <!--数据源-->
-    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
-        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/seppms?user=root&amp;password=root&amp;useUnicode=true&amp;characterEncoding=utf-8"/>
-        <property name="user" value="root"/>
-        <property name="password" value="root"/>
-        <property name="maxPoolSize" value="10"/>
-        <property name="minPoolSize" value="2"/>
-        <property name="initialPoolSize" value="3"/>
-        <property name="acquireIncrement" value="2"/>
-    </bean>
-    <!--mybatis整合spring核心类-->
-    <bean id="sf" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <!--指定数据源-->
-        <property name="dataSource" ref="dataSource"/>
-        <!--指定mybatis配置文件-->
-        <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
-    </bean>
-    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource"/>
-    </bean>
+
 
 
 
