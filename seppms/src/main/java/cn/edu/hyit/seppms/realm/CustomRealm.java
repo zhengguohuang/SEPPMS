@@ -2,6 +2,7 @@ package cn.edu.hyit.seppms.realm;
 
 import cn.edu.hyit.seppms.dao.impl.UserDaoImpl;
 import cn.edu.hyit.seppms.domain.User;
+import cn.edu.hyit.seppms.service.UserService;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -21,8 +22,8 @@ import java.util.Set;
 
 public class CustomRealm extends AuthorizingRealm {
 
-    @Resource(name = "userDao")
-    private UserDaoImpl dao;
+    @Resource(name = "userService")
+    private UserService us;
 
     /**
      * 用来做授权
@@ -83,7 +84,7 @@ public class CustomRealm extends AuthorizingRealm {
      * @return
      */
     private String getPasswordByNumber(String number) {
-        User user = dao.getUserByNumber(number);
+        User user = us.getUserByNumber(number);
         if (user != null){
             return user.getPassword();
         }

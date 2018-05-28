@@ -55,5 +55,9 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
         return dao.selectByNumber(number);
     }
 
+    public User getUserByNumber(String number) {
+        return dao.getUserByNumber(number);
+    }
+
 
 }
