@@ -17,7 +17,12 @@
     <mvc:resources mapping="/docs/**" location="/docs/"/>
     <mvc:resources mapping="/fonts/**" location="/fonts/"/>
     <mvc:resources mapping="/plugins/**" location="/plugins/"/>
+
     <!--配置扫描包组件-->
+    <!--组件扫描，可以扫描 controller、Service、...
+    并注册添加到 spring 容器中
+    这里扫描 controller，指定controller的包
+    -->
     <context:component-scan base-package="cn.edu.hyit.seppms.web.controller"/>
     <!--使用注解驱动-->
     <mvc:annotation-driven/>
