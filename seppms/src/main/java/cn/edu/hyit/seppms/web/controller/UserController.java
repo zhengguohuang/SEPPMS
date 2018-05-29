@@ -11,9 +11,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -130,6 +130,9 @@ public class UserController {
     public String doReg(User user){
         Md5Hash md5Hash = new Md5Hash(user.getPassword(), user.getNumber());//a81082604404c078e80f8bf501133abe
         user.setPassword(md5Hash.toString());
+        Date date=new Date();
+        java.sql.Date sqldate = new java.sql.Date(date.getTime());
+        user.setCreateTime(sqldate);
         // 插入数据库
         us.insert(user);
         System.out.println(user.getNumber() + "\t" + user.getPassword());
@@ -142,5 +145,19 @@ public class UserController {
     @RequestMapping(value = "/empty", produces = "application/json;charset=utf-8")
     public String empty(){
         return "empty_page";
+    }
+
+    /**
+     * 个人资料
+     */
+    @RequestMapping(value = "/user/profile", produces = "application/json;charset=utf-8")
+    public String profile(Model m){
+        //获取当前用户名
+        Subject subject = SecurityUtils.getSubject();
+        String number = (String) subject.getPrincipal();
+        User user = us.selectByNumber(number);
+        m.addAttribute("user", user);
+
+        return "/user/profile";
     }
 }

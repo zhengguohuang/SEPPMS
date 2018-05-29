@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="teacher_task">
+    <resultMap id="RM_TeacherTask" type="_TeacherTask">
+        <id property="id" column="ttid" />
+        <result property="task" column="tttask"/>
+        <result property="mandate" column="ttmandate"/>
+        <result property="outline" column="ttoutline"/>
+        <association property="teacher" javaType="_User">
+            <id property="id" column="tid"/>
+            <result property="avatar" column="tavatar"/>
+            <result property="number" column="tnumber"/>
+            <result property="name" column="tname"/>
+            <result property="sex" column="tsex"/>
+            <result property="className" column="tcalssname"/>
+            <result property="email" column="temail"/>
+            <result property="specialty" column="tspecialty"/>
+            <result property="hobby" column="thobby"/>
+            <result property="status" column="tstatus"/>
+            <result property="createTime" column="tcreatetime"/>
+        </association>
+    </resultMap>
+
+    <select id="selectAllTeacherTaskById" parameterType="int" resultMap="RM_TeacherTask">
+      SELECT
+          tt.id ttid,
+          tt.task tttask,
+          tt.mandate ttmandate,
+          tt.outline ttoutline,
+          t.id tid,
+          t.avatar tavatar,
+          t.number tnumber,
+          t.name tname,
+          t.sex tsex,
+          t.classname tclassname,
+          t.email temail,
+          t.specialty tspecialty,
+          t.hobby thobby,
+          t.status tstatus,
+          t.createtime tcreatetime
+
+        FROM teacher_task tt
+        LEFT OUTER JOIN sys_user t ON tt.teacherid = t.id
+        WHERE tt.id = #{id}
+    </select>
+
+</mapper>

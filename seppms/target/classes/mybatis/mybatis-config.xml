@@ -28,5 +28,6 @@
         <mapper resource="mapper/RoleMapper.xml"/>
         <mapper resource="mapper/GroupInfoMapper.xml"/>
         <mapper resource="mapper/BelongMapper.xml"/>
+        <mapper resource="mapper/TeacherTaskMapper.xml"/>
     </mappers>
 </configuration>

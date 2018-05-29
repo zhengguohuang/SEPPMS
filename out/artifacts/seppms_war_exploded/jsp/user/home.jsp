@@ -47,9 +47,7 @@
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
                             <li><a class="J_menuItem" href="form_avatar.html">修改头像</a>
                             </li>
-                            <li><a class="J_menuItem" href="profile.html">个人资料</a>
-                            </li>
-                            <li><a class="J_menuItem" href="mailbox.html">信箱</a>
+                            <li><a class="J_menuItem" href='<c:url value="/user/profile"/> '>个人资料</a>
                             </li>
                             <li class="divider"></li>
                             <li><a href="login.html">安全退出</a>
@@ -63,7 +61,7 @@
                     <a class="J_menuItem" href=""><i class="fa fa-home"></i> <span class="nav-label">主页</span></a>
                 </li>
                 <li>
-                    <a class="J_menuItem" href="profile.html"><i class="fa fa-user"></i> <span class="nav-label">个人信息</span></a>
+                    <a class="J_menuItem" href='<c:url value="/user/profile"/> '><i class="fa fa-user"></i> <span class="nav-label">个人信息</span></a>
                 </li>
                 <li>
                     <a class="J_menuItem" href='<c:url value="/group/findAll"/> '><i class="fa fa-group"></i> <span class="nav-label">小组</span></a>
@@ -78,7 +76,7 @@
                         <!--<li>
                             <a class="J_menuItem" href="" data-index="0">资料文件</a>
                         </li>-->
-                        <li><a class="J_menuItem" href="file_manager.html">资料文件</a>
+                        <li><a class="J_menuItem" href='<c:url value="/info/findAllMandate"/> '>资料文件</a>
                         </li>
                         <li>
                             <a class="J_menuItem" href="tasks.html">我的任务</a>
@@ -228,7 +226,7 @@
             <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src='<c:url value="/empty"/> ' frameborder="0" data-id="empty_page.html" seamless></iframe>
         </div>
         <div class="footer">
-            <div class="pull-right">&copy; 2018- <a href="http://www.zi-han.net/" target="_blank">zihan's blog</a>
+            <div class="pull-right">&copy; 2018- <a href="" target="_blank">hyit</a>
             </div>
         </div>
     </div>

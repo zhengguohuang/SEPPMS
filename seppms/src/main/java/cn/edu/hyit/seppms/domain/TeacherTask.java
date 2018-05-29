@@ -1,7 +1,7 @@
 package cn.edu.hyit.seppms.domain;
 public class TeacherTask {
 	private Integer id;
-	private int teacherId;
+	private User teacher;
 	private String task;
 	private String mandate;
 	private String outline;
@@ -14,12 +14,12 @@ public class TeacherTask {
 		this.id = id;
 	}
 
-	public int getTeacherId() {
-		return teacherId;
+	public User getTeacher() {
+		return teacher;
 	}
 
-	public void setTeacherId(int teacherId) {
-		this.teacherId = teacherId;
+	public void setTeacher(User teacher) {
+		this.teacher = teacher;
 	}
 
 	public String getTask() {
