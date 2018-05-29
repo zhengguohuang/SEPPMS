@@ -1,41 +1,70 @@
 package cn.edu.hyit.seppms.domain;
 
+import java.sql.Date;
+import java.util.List;
+
 public class GroupInfo {
-	private int id;
+	private Integer id;
 	private String name;
-	private int leaderid;
-	private int teacherid;
+	private User leader;
+	private User teacher;
 	private int status;
-	
-	public int getId() {
+	private Date createTime;
+	private List<User> members;
+
+	public List<User> getMembers() {
+		return members;
+	}
+
+	public void setMembers(List<User> members) {
+		this.members = members;
+	}
+
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+
+	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getLeaderid() {
-		return leaderid;
+
+	public User getLeader() {
+		return leader;
 	}
-	public void setLeaderid(int leaderid) {
-		this.leaderid = leaderid;
+
+	public void setLeader(User leader) {
+		this.leader = leader;
 	}
-	public int getTeacherid() {
-		return teacherid;
+
+	public User getTeacher() {
+		return teacher;
 	}
-	public void setTeacherid(int teacherid) {
-		this.teacherid = teacherid;
+
+	public void setTeacher(User teacher) {
+		this.teacher = teacher;
 	}
+
 	public int getStatus() {
 		return status;
 	}
+
 	public void setStatus(int status) {
 		this.status = status;
 	}
-	
+
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
 }

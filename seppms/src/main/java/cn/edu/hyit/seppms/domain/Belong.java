@@ -1,29 +1,30 @@
 package cn.edu.hyit.seppms.domain;
 public class Belong {
 	private Integer id;
-	private Integer userid;
-	private Integer groupid;
-	
+	private User user;
+	private int groupId;
+
 	public Integer getId() {
 		return id;
 	}
-	
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
-	public Integer getUserid() {
-		return userid;
+
+	public User getUser() {
+		return user;
 	}
-	
-	public void setUserid(Integer userid) {
-		this.userid = userid;
+
+	public void setUser(User user) {
+		this.user = user;
 	}
-	public Integer getGroupid() {
-		return groupid;
+
+	public int getGroupId() {
+		return groupId;
 	}
-	
-	public void setGroupid(Integer groupid) {
-		this.groupid = groupid;
+
+	public void setGroupId(int groupId) {
+		this.groupId = groupId;
 	}
 }

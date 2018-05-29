@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="items">
+    <!--习惯以表名作为名字空间-->
+    <insert id="insert">
+--         name与User的属性一致
+        INSERT INTO items(itemname, oid) VALUES (#{itemName}, #{order.id})
+    </insert>
+    <select id="selectOne" parameterType="int" resultMap="RM_Item">
+        select
+          i.id iid,
+          i.itemname iitemname,
+          o.id oid,
+          o.orderno oorderno,
+          u.id uid,
+          u.name uname,
+          u.age uage
+        from items i
+        left outer join orders o on i.oid = o.id
+        left outer join users u on o.uid = u.id
+        where i.id = 2;
+    </select>
+    <resultMap id="RM_Item" type="_Item">
+        <id property="id" column="iid"/>
+        <result property="itemName" column="iitemname"/>
+        <association property="order" javaType="_Order">
+            <id property="id" column="oid"/>
+            <result property="orderNo" column="oorderno"/>
+            <association property="user" javaType="_User">
+                <id property="id" column="uid"/>
+                <result property="name" column="uname"/>
+                <result property="age" column="uage"/>
+            </association>
+        </association>
+    </resultMap>
+</mapper>

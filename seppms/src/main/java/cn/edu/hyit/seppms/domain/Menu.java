@@ -1,7 +1,5 @@
 package cn.edu.hyit.seppms.domain;
 
-import java.sql.Date;
-
 public class Menu {
     // 主键id
     private Integer id;
@@ -18,177 +16,120 @@ public class Menu {
     // url地址
     private String url;
     // 菜单排序号
-    private Integer num;
+    private int num;
     // 菜单层级
-    private Integer levels;
+    private int levels;
     // 是否是菜单(1:是 0:不是)
-    private boolean ismenu;
+    private int isMenu;
     // 备注
     private String tips;
     // 状态(1:启用 2:冻结 3:删除)
-    private boolean status;
+    private int status;
     // 是否打开:    1:打开   0:不打开
-    private boolean isopen;
+    private boolean isOpen;
 
 
-
-    
-	/**
-	 * @return the id
-	 */
 	public Integer getId() {
 		return id;
 	}
-	/**
-	 * @param id the id to set
-	 */
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	/**
-	 * @return the code
-	 */
+
 	public String getCode() {
 		return code;
 	}
-	/**
-	 * @param code the code to set
-	 */
+
 	public void setCode(String code) {
 		this.code = code;
 	}
-	/**
-	 * @return the pcode
-	 */
+
 	public String getPcode() {
 		return pcode;
 	}
-	/**
-	 * @param pcode the pcode to set
-	 */
+
 	public void setPcode(String pcode) {
 		this.pcode = pcode;
 	}
-	/**
-	 * @return the pcodes
-	 */
+
 	public String getPcodes() {
 		return pcodes;
 	}
-	/**
-	 * @param pcodes the pcodes to set
-	 */
+
 	public void setPcodes(String pcodes) {
 		this.pcodes = pcodes;
 	}
-	/**
-	 * @return the name
-	 */
+
 	public String getName() {
 		return name;
 	}
-	/**
-	 * @param name the name to set
-	 */
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	/**
-	 * @return the icon
-	 */
+
 	public String getIcon() {
 		return icon;
 	}
-	/**
-	 * @param icon the icon to set
-	 */
+
 	public void setIcon(String icon) {
 		this.icon = icon;
 	}
-	/**
-	 * @return the url
-	 */
+
 	public String getUrl() {
 		return url;
 	}
-	/**
-	 * @param url the url to set
-	 */
+
 	public void setUrl(String url) {
 		this.url = url;
 	}
-	/**
-	 * @return the num
-	 */
-	public Integer getNum() {
+
+	public int getNum() {
 		return num;
 	}
-	/**
-	 * @param num the num to set
-	 */
-	public void setNum(Integer num) {
+
+	public void setNum(int num) {
 		this.num = num;
 	}
-	/**
-	 * @return the levels
-	 */
-	public Integer getLevels() {
+
+	public int getLevels() {
 		return levels;
 	}
-	/**
-	 * @param levels the levels to set
-	 */
-	public void setLevels(Integer levels) {
+
+	public void setLevels(int levels) {
 		this.levels = levels;
 	}
-	/**
-	 * @return the ismenu
-	 */
-	public boolean isIsmenu() {
-		return ismenu;
+
+	public int getIsMenu() {
+		return isMenu;
 	}
-	/**
-	 * @param ismenu the ismenu to set
-	 */
-	public void setIsmenu(boolean ismenu) {
-		this.ismenu = ismenu;
+
+	public void setIsMenu(int isMenu) {
+		this.isMenu = isMenu;
 	}
-	/**
-	 * @return the tips
-	 */
+
 	public String getTips() {
 		return tips;
 	}
-	/**
-	 * @param tips the tips to set
-	 */
+
 	public void setTips(String tips) {
 		this.tips = tips;
 	}
-	/**
-	 * @return the status
-	 */
-	public boolean isStatus() {
+
+	public int getStatus() {
 		return status;
 	}
-	/**
-	 * @param status the status to set
-	 */
-	public void setStatus(boolean status) {
+
+	public void setStatus(int status) {
 		this.status = status;
 	}
-	/**
-	 * @return the isopen
-	 */
-	public boolean isIsopen() {
-		return isopen;
-	}
-	/**
-	 * @param isopen the isopen to set
-	 */
-	public void setIsopen(boolean isopen) {
-		this.isopen = isopen;
+
+	public boolean isOpen() {
+		return isOpen;
 	}
 
-    
+	public void setOpen(boolean open) {
+		isOpen = open;
+	}
 }

@@ -1,28 +1,31 @@
 package cn.edu.hyit.seppms.domain;
 
 public class Relation {
-	private int id;
-	private int menuid;
-	private int roid;
-	
-	public int getId() {
+	private Integer id;
+	private String roleName;
+	private int menuId;
+
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+
+	public void setId(Integer id) {
 		this.id = id;
 	}
-	public int getMenuid() {
-		return menuid;
+
+	public String getRoleName() {
+		return roleName;
 	}
-	public void setMenuid(int menuid) {
-		this.menuid = menuid;
+
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
 	}
-	public int getRoid() {
-		return roid;
+
+	public int getMenuId() {
+		return menuId;
 	}
-	public void setRoid(int roid) {
-		this.roid = roid;
+
+	public void setMenuId(int menuId) {
+		this.menuId = menuId;
 	}
-	
-	
 }

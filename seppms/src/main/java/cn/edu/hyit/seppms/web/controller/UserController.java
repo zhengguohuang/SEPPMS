@@ -4,6 +4,7 @@ import cn.edu.hyit.seppms.domain.User;
 import cn.edu.hyit.seppms.service.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.crypto.hash.Md5Hash;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -89,42 +90,20 @@ public class UserController {
         return "user/userList";
     }
 
-    /**
-     * 用户登录
-     * @param m
-     * @return
-     */
-    @RequestMapping("/user/login")
-    public String login(Model m){
-        return "user/login";
-    }
 
-    /**
-     * vertify登录
-     */
-    @RequestMapping(value = "/user/vertify", method = RequestMethod.POST)
-    public String vertify(Model m, @RequestParam("number") String number, @RequestParam("password") String password){
-        User user = us.selectByNumber(number);
-        m.addAttribute("user", user);
-        if (user != null){
-            if (password != null && !password.equals("") && password.equals(user.getPassword())){
-                return "user/userHome";
-            }
-        }
-        else {
-            return "/user/login";
-        }
-        return "/user/login";
-    }
+
+
 
     /**
      * shiro 权限控制
      * @param user
+     * , produces = "application/json;charset=utf-8"
      * @return
      */
-    @RequestMapping(value = "/subLogin", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
-    @ResponseBody
-    public String subLogin(User user){
+    @RequestMapping(value = "/home")
+    public String subLogin(Model m, User user){
+        User u = us.selectByNumber(user.getNumber());
+        m.addAttribute("user", u);
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(user.getNumber(), user.getPassword());
         try {
@@ -133,9 +112,35 @@ public class UserController {
         catch (Exception e){
             return e.getMessage();
         }
-        if (subject.hasRole("admin")){
-            return "有admin权限";
-        }
-        return "无admin权限";
+        return "/user/home";
+//        if (subject.hasRole("admin")){
+////            return "有admin权限";
+////        }
+////        return "无admin权限";
+    }
+
+    @RequestMapping(value = "/user/toRegPage")
+    public String toRegPage(){
+        return "user/register";
+    }
+
+    /**
+     */
+    @RequestMapping(value = "/doReg", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
+    public String doReg(User user){
+        Md5Hash md5Hash = new Md5Hash(user.getPassword(), user.getNumber());//a81082604404c078e80f8bf501133abe
+        user.setPassword(md5Hash.toString());
+        // 插入数据库
+        us.insert(user);
+        System.out.println(user.getNumber() + "\t" + user.getPassword());
+        // 重定向登录页
+        return "redirect:/";
+    }
+
+    /**
+     */
+    @RequestMapping(value = "/empty", produces = "application/json;charset=utf-8")
+    public String empty(){
+        return "empty_page";
     }
 }

@@ -1,40 +1,51 @@
 package cn.edu.hyit.seppms.domain;
 
+import java.sql.Date;
+
 public class Topic {
 	private int id;
-	private int useid;
+	private int useId;
 	private String title;
 	private String content;
-	private String date;
-	
+	private Date createTime;
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getUseid() {
-		return useid;
+
+	public int getUseId() {
+		return useId;
 	}
-	public void setUseid(int useid) {
-		this.useid = useid;
+
+	public void setUseId(int useId) {
+		this.useId = useId;
 	}
+
 	public String getTitle() {
 		return title;
 	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
 	public String getContent() {
 		return content;
 	}
+
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String getDate() {
-		return date;
+
+	public Date getCreateTime() {
+		return createTime;
 	}
-	public void setDate(String date) {
-		this.date = date;
-	}	
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
 }

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sys_user">
+    <!--习惯以表名作为名字空间-->
+    <resultMap id="RM_User" type="_User">
+        <id property="id" column="id" />
+        <result property="avatar" column="avatar"/>
+        <result property="number" column="number"/>
+        <result property="password" column="password"/>
+        <result property="name" column="name"/>
+        <result property="sex" column="sex"/>
+        <result property="className" column="classname"/>
+        <result property="email" column="email"/>
+        <result property="specialty" column="specialty"/>
+        <result property="hobby" column="hobby"/>
+        <result property="status" column="status"/>
+        <result property="createTime" column="createtime"/>
+
+        <!--&lt;!&ndash;映射一对多关联关系&ndash;&gt;-->
+        <!--<collection property="orders" ofType="_Order">-->
+        <!--<id property="id" column="oid"/>-->
+        <!--<result property="orderNo" column="oorderno"/>-->
+        <!--</collection>-->
+    </resultMap>
+    <insert id="insert" parameterType="_User">
+        INSERT INTO sys_user(
+          id,
+          avatar,
+          number,
+          password,
+          name,
+          sex,
+          classname,
+          email,
+          specialty,
+          hobby,
+          status,
+          createtime)
+        VALUES (
+          #{id},
+          #{avatar},
+          #{number},
+          #{password},
+          #{name},
+          #{sex},
+          #{className},
+          #{email},
+          #{specialty},
+          #{hobby},
+          #{status},
+          #{createTime})
+    </insert>
+    <!--TODO-->
+    <update id="update">
+        UPDATE sys_user SET name = #{name} WHERE id = #{id}
+    </update>
+
+    <select id="selectOne" parameterType="int" resultMap="RM_User">
+        SELECT
+          id,
+          avatar,
+          number,
+          password,
+          name,
+          sex,
+          classname,
+          email,
+          specialty,
+          hobby,
+          status,
+          createtime
+        FROM sys_user
+        WHERE id = #{id}
+    </select>
+
+    <select id="selectAll" resultMap="RM_User">
+        SELECT
+          id,
+          avatar,
+          number,
+          password,
+          name,
+          sex,
+          classname,
+          email,
+          specialty,
+          hobby,
+          status,
+          createtime
+        FROM sys_user
+    </select>
+    <select id="selectByNumber" parameterType="string" resultMap="RM_User">
+        SELECT
+        id,
+        avatar,
+        number,
+        password,
+        name,
+        sex,
+        classname,
+        email,
+        specialty,
+        hobby,
+        status,
+        createtime
+        FROM sys_user
+        WHERE number = #{number}
+    </select>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM users WHERE id = #{id}
+    </delete>
+    <select id="selectPage" resultType="_User">
+        SELECT * FROM users u limit #{offset}, #{limit}
+    </select>
+
+    <select id="selectCount" resultType="int">
+        SELECT count(*) FROM users u
+    </select>
+    <select id="getUserByNumber" parameterType="string" resultMap="RM_User">
+        SELECT
+            id,
+            avatar,
+            number,
+            password,
+            name,
+            sex,
+            classname,
+            email,
+            specialty,
+            hobby,
+            status,
+            createtime
+        FROM sys_user
+        WHERE number = #{number}
+    </select>
+</mapper>

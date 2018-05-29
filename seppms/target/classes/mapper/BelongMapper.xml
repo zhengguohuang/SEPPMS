@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="belong">
+    <resultMap id="RM_Belong" type="_Belong">
+        <id property="id" column="bid" />
+        <result property="groupId" column="bgroupid"/>
+        <association property="user" javaType="_User">
+            <id property="id" column="uid"/>
+            <result property="avatar" column="uavatar"/>
+            <result property="number" column="unumber"/>
+            <result property="name" column="uname"/>
+            <result property="sex" column="usex"/>
+            <result property="className" column="ucalssname"/>
+            <result property="email" column="uemail"/>
+            <result property="specialty" column="uspecialty"/>
+            <result property="hobby" column="uhobby"/>
+            <result property="status" column="ustatus"/>
+            <result property="createTime" column="ucreatetime"/>
+        </association>
+    </resultMap>
+
+    <select id="selectUsersByGroupId" parameterType="int" resultMap="RM_Belong">
+        SELECT
+          b.id bid,
+          b.userid uid,
+          u.avatar uavatar,
+          u.number unumber,
+          u.name uname,
+          u.sex usex,
+          u.classname uclassname,
+          u.email uemail,
+          u.specialty uspecialty,
+          u.hobby uhobby,
+          u.status ustatus,
+          u.createtime ucreatetime,
+          b.groupid bgroutid
+        FROM belong b
+        left OUTER JOIN sys_user u ON b.userid = u.id
+        WHERE b.groupid = #{groupId};
+    </select>
+
+</mapper>

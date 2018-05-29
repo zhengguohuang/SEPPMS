@@ -1,93 +1,64 @@
 package cn.edu.hyit.seppms.domain;
 
-import java.sql.Date;
-
 public class Mark {
     // 主键id
     private Integer id;
     // 评分老师id
-    private String teacherid;
+    private int teacherId;
     // 学生id
-    private String studentid;
+    private int studentId;
     // 平时成绩
-    private String daily;
+    private int daily;
     // 答辩成绩
-    private String reply;
+    private int reply;
     // 文档成绩
-    private String document;
-	/**
-	 * @return the teacherid
-	 */
-	public String getTeacherid() {
-		return teacherid;
-	}
-	/**
-	 * @param teacherid the teacherid to set
-	 */
-	public void setTeacherid(String teacherid) {
-		this.teacherid = teacherid;
-	}
-	/**
-	 * @return the id
-	 */
+    private int document;
+
 	public Integer getId() {
 		return id;
 	}
-	/**
-	 * @param id the id to set
-	 */
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	/**
-	 * @return the studentid
-	 */
-	public String getStudentid() {
-		return studentid;
+
+	public int getTeacherId() {
+		return teacherId;
 	}
-	/**
-	 * @param studentid the studentid to set
-	 */
-	public void setStudentid(String studentid) {
-		this.studentid = studentid;
+
+	public void setTeacherId(int teacherId) {
+		this.teacherId = teacherId;
 	}
-	/**
-	 * @return the daily
-	 */
-	public String getDaily() {
+
+	public int getStudentId() {
+		return studentId;
+	}
+
+	public void setStudentId(int studentId) {
+		this.studentId = studentId;
+	}
+
+	public int getDaily() {
 		return daily;
 	}
-	/**
-	 * @param daily the daily to set
-	 */
-	public void setDaily(String daily) {
+
+	public void setDaily(int daily) {
 		this.daily = daily;
 	}
-	/**
-	 * @return the reply
-	 */
-	public String getReply() {
+
+	public int getReply() {
 		return reply;
 	}
-	/**
-	 * @param reply the reply to set
-	 */
-	public void setReply(String reply) {
+
+	public void setReply(int reply) {
 		this.reply = reply;
 	}
-	/**
-	 * @return the document
-	 */
-	public String getDocument() {
+
+	public int getDocument() {
 		return document;
 	}
-	/**
-	 * @param document the document to set
-	 */
-	public void setDocument(String document) {
+
+	public void setDocument(int document) {
 		this.document = document;
 	}
-
-
-
 }

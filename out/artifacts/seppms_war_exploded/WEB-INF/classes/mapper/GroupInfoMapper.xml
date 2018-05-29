@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="group_info">
+    <!--习惯以表名作为名字空间-->
+    <resultMap id="RM_GroupInfo" type="_GroupInfo">
+        <id property="id" column="gid" />
+        <result property="name" column="gname"/>
+        <result property="status" column="gstatus"/>
+        <result property="createTime" column="gcreatetime"/>
+        <association property="leader" javaType="_User">
+            <id property="id" column="lid"/>
+            <result property="avatar" column="lavatar"/>
+            <result property="number" column="lnumber"/>
+            <result property="name" column="lname"/>
+            <result property="sex" column="lsex"/>
+            <result property="className" column="lcalssname"/>
+            <result property="email" column="lemail"/>
+            <result property="specialty" column="lspecialty"/>
+            <result property="hobby" column="lhobby"/>
+            <result property="status" column="lstatus"/>
+            <result property="createTime" column="lcreatetime"/>
+        </association>
+        <association property="teacher" javaType="_User">
+            <id property="id" column="tid"/>
+            <result property="avatar" column="tavatar"/>
+            <result property="number" column="tnumber"/>
+            <result property="name" column="tname"/>
+            <result property="sex" column="tsex"/>
+            <result property="className" column="tcalssname"/>
+            <result property="email" column="temail"/>
+            <result property="specialty" column="tspecialty"/>
+            <result property="hobby" column="thobby"/>
+            <result property="status" column="tstatus"/>
+            <result property="createTime" column="tcreatetime"/>
+        </association>
+        <collection property="members" ofType="_User">
+            <id property="id" column="uid"/>
+            <result property="avatar" column="mavatar"/>
+            <result property="number" column="mnumber"/>
+            <result property="name" column="mname"/>
+            <result property="sex" column="msex"/>
+            <result property="className" column="mcalssname"/>
+            <result property="email" column="memail"/>
+            <result property="specialty" column="mspecialty"/>
+            <result property="hobby" column="mhobby"/>
+            <result property="status" column="mstatus"/>
+            <result property="createTime" column="mcreatetime"/>
+        </collection>
+    </resultMap>
+
+    <select id="selectAll" resultMap="RM_GroupInfo">
+        SELECT
+          g.id gid,
+          g.name gname,
+          g.leaderid lid,
+          l.avatar lavatar,
+          l.number lnumber,
+          l.name lname,
+          l.sex lsex,
+          l.classname lclassname,
+          l.email lemail,
+          l.specialty lspecialty,
+          l.hobby lhobby,
+          l.status lstatus,
+          l.createtime lcreatetime,
+          g.teacherid tid,
+          t.avatar tavatar,
+          t.number tnumber,
+          t.name tname,
+          t.sex tsex,
+          t.classname tclassname,
+          t.email temail,
+          t.specialty tspecialty,
+          t.hobby thobby,
+          t.status tstatus,
+          t.createtime tcreatetime,
+          g.createtime gcreatetime,
+          g.status gstatus,
+          b.id bid,
+          b.userid uid,
+          m.avatar mavatar,
+          m.number mnumber,
+          m.name mname,
+          m.sex msex,
+          m.classname mclassname,
+          m.email memail,
+          m.specialty mspecialty,
+          m.hobby mhobby,
+          m.status mstatus,
+          m.createtime mcreatetime
+        FROM group_info g
+        LEFT OUTER JOIN sys_user l ON g.leaderid = l.id
+        LEFT OUTER JOIN sys_user t ON g.teacherid = t.id
+        LEFT OUTER JOIN belong b ON g.id = b.groupid
+        LEFT OUTER JOIN sys_user m ON b.userid = m.id
+    </select>
+
+</mapper>

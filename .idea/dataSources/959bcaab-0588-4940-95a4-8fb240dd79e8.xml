@@ -1022,24 +1022,18 @@
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="260" parent="246" name="leaderid">
+    <column id="260" parent="246" name="groupid">
       <Position>3</Position>
-      <Comment>用户id</Comment>
-      <DataType>int(11)|0</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="261" parent="246" name="groupid">
-      <Position>4</Position>
       <Comment>项目组id</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="262" parent="246" name="PRIMARY">
+    <key id="261" parent="246" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="263" parent="247" name="id">
+    <column id="262" parent="247" name="id">
       <Position>1</Position>
       <Comment>主键自增</Comment>
       <DataType>int(11)|0</DataType>
@@ -1047,28 +1041,33 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="264" parent="247" name="name">
+    <column id="263" parent="247" name="name">
       <Position>2</Position>
       <Comment>项目组名字</Comment>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="265" parent="247" name="leaderid">
+    <column id="264" parent="247" name="leaderid">
       <Position>3</Position>
       <Comment>组长id</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="266" parent="247" name="teacherid">
+    <column id="265" parent="247" name="teacherid">
       <Position>4</Position>
       <Comment>老师id</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="267" parent="247" name="status">
+    <column id="266" parent="247" name="status">
       <Position>5</Position>
       <Comment>是否被老师确认(1: 是 0: 否)</Comment>
       <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="267" parent="247" name="createtime">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <key id="268" parent="247" name="PRIMARY">
@@ -1335,15 +1334,15 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="311" parent="253" name="menuid">
+    <column id="311" parent="253" name="rolename">
       <Position>2</Position>
-      <Comment>菜单id</Comment>
-      <DataType>int(11)|0</DataType>
+      <Comment>角色名</Comment>
+      <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="312" parent="253" name="roleid">
+    <column id="312" parent="253" name="menuid">
       <Position>3</Position>
-      <Comment>角色id</Comment>
+      <Comment>菜单id</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -1439,30 +1438,24 @@
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="328" parent="255" name="roleid">
+    <column id="328" parent="255" name="status">
       <Position>11</Position>
-      <Comment>角色id</Comment>
+      <Comment>状态(1:启用 2:冻结即待确认 3:删除)</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="329" parent="255" name="status">
+    <column id="329" parent="255" name="createtime">
       <Position>12</Position>
-      <Comment>状态(1:启用 2:冻结 3:删除)</Comment>
-      <DataType>int(11)|0</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="330" parent="255" name="createtime">
-      <Position>13</Position>
       <Comment>创建时间</Comment>
       <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="331" parent="255" name="PRIMARY">
+    <key id="330" parent="255" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="332" parent="256" name="id">
+    <column id="331" parent="256" name="id">
       <Position>1</Position>
       <Comment>主键自增</Comment>
       <DataType>int(11)|0</DataType>
@@ -1470,36 +1463,36 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="333" parent="256" name="teacherid">
+    <column id="332" parent="256" name="teacherid">
       <Position>2</Position>
       <Comment>老师id</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="334" parent="256" name="task">
+    <column id="333" parent="256" name="task">
       <Position>3</Position>
       <Comment>任务内容</Comment>
       <DataType>text|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="335" parent="256" name="mandate">
+    <column id="334" parent="256" name="mandate">
       <Position>4</Position>
       <Comment>任务书url</Comment>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="336" parent="256" name="outline">
+    <column id="335" parent="256" name="outline">
       <Position>5</Position>
       <Comment>任务大纲</Comment>
       <DataType>text|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="337" parent="256" name="PRIMARY">
+    <key id="336" parent="256" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="338" parent="257" name="id">
+    <column id="337" parent="257" name="id">
       <Position>1</Position>
       <Comment>主键自增</Comment>
       <DataType>int(11)|0</DataType>
@@ -1507,31 +1500,31 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="339" parent="257" name="userid">
+    <column id="338" parent="257" name="userid">
       <Position>2</Position>
       <Comment>发起者</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="340" parent="257" name="title">
+    <column id="339" parent="257" name="title">
       <Position>3</Position>
       <Comment>主题标题</Comment>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="341" parent="257" name="content">
+    <column id="340" parent="257" name="content">
       <Position>4</Position>
       <Comment>详细内容</Comment>
       <DataType>text|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="342" parent="257" name="createtime">
+    <column id="341" parent="257" name="createtime">
       <Position>5</Position>
       <Comment>创建时间</Comment>
       <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="343" parent="257" name="PRIMARY">
+    <key id="342" parent="257" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

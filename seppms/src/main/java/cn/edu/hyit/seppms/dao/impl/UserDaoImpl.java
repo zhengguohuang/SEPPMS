@@ -17,15 +17,15 @@ import java.util.List;
 public class UserDaoImpl extends SqlSessionDaoSupport implements BaseDao<User> {
 
     public void insert(User user) {
-        getSqlSession().insert("users.insert", user);
+        getSqlSession().insert("sys_user.insert", user);
     }
 
     public void update(User user) {
-        getSqlSession().update("users.update", user);
+        getSqlSession().update("sys_user.update", user);
     }
 
     public void delete(Integer id) {
-        getSqlSession().delete("users.delete", id);
+        getSqlSession().delete("sys_user.delete", id);
     }
 
     public User selectOne(Integer id) {
@@ -43,11 +43,11 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements BaseDao<User> {
      * @return
      */
     public List<User> selectPage(int offset, int len) {
-        return getSqlSession().selectList("users.selectPage", new RowBounds(offset, len));
+        return getSqlSession().selectList("sys_user.selectPage", new RowBounds(offset, len));
     }
 
     public int selectCount() {
-        return getSqlSession().selectOne("users.selectCount");
+        return getSqlSession().selectOne("sys_user.selectCount");
     }
 
     public User selectByNumber(String number){
