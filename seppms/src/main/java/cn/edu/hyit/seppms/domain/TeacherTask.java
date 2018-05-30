@@ -1,10 +1,17 @@
 package cn.edu.hyit.seppms.domain;
+
+import java.sql.Date;
+import java.util.List;
+
 public class TeacherTask {
 	private Integer id;
 	private User teacher;
 	private String task;
-	private String mandate;
 	private String outline;
+	// 任务创建时间
+	private Date createTime;
+	// 上传的任务书，资料
+	private List<File> files;
 
 	public Integer getId() {
 		return id;
@@ -30,19 +37,27 @@ public class TeacherTask {
 		this.task = task;
 	}
 
-	public String getMandate() {
-		return mandate;
-	}
-
-	public void setMandate(String mandate) {
-		this.mandate = mandate;
-	}
-
 	public String getOutline() {
 		return outline;
 	}
 
 	public void setOutline(String outline) {
 		this.outline = outline;
+	}
+
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+
+	public List<File> getFiles() {
+		return files;
+	}
+
+	public void setFiles(List<File> files) {
+		this.files = files;
 	}
 }

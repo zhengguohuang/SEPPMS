@@ -6,8 +6,8 @@
     <resultMap id="RM_TeacherTask" type="_TeacherTask">
         <id property="id" column="ttid" />
         <result property="task" column="tttask"/>
-        <result property="mandate" column="ttmandate"/>
         <result property="outline" column="ttoutline"/>
+        <result property="createTime" column="ttcreatetime"/>
         <association property="teacher" javaType="_User">
             <id property="id" column="tid"/>
             <result property="avatar" column="tavatar"/>
@@ -21,14 +21,20 @@
             <result property="status" column="tstatus"/>
             <result property="createTime" column="tcreatetime"/>
         </association>
+        <collection property="files" ofType="_File">
+            <id property="id" column="fid"/>
+            <result property="fileName" column="ffilename"/>
+            <result property="url" column="furl"/>
+            <result property="createTime" column="fcreatetime"/>
+        </collection>
     </resultMap>
 
-    <select id="selectAllTeacherTaskById" parameterType="int" resultMap="RM_TeacherTask">
+    <select id="selectAll" resultMap="RM_TeacherTask">
       SELECT
           tt.id ttid,
           tt.task tttask,
-          tt.mandate ttmandate,
           tt.outline ttoutline,
+          tt.createtime ttcreatetime,
           t.id tid,
           t.avatar tavatar,
           t.number tnumber,
@@ -39,11 +45,15 @@
           t.specialty tspecialty,
           t.hobby thobby,
           t.status tstatus,
-          t.createtime tcreatetime
-
+          t.createtime tcreatetime,
+          f.id fid,
+          f.filename ffilename,
+          f.url furl,
+          f.createtime fcreatetime
         FROM teacher_task tt
         LEFT OUTER JOIN sys_user t ON tt.teacherid = t.id
-        WHERE tt.id = #{id}
+        left OUTER JOIN teacher_up_file tuf ON tt.id = tuf.teachertaskid
+        LEFT OUTER JOIN file f ON tuf.fileid = f.id
     </select>
 
 </mapper>

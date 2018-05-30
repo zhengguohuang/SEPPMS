@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="leader_task">
+    <resultMap id="RM_LeaderTask" type="_LeaderTask">
+        <id property="id" column="ltid" />
+        <result property="task" column="lttask"/>
+        <association property="process" javaType="_Process">
+            <id property="id" column="pid"/>
+            <result property="name" column="pname"/>
+            <result property="startTime" column="pstarttime"/>
+            <result property="endTime" column="pendtime"/>
+        </association>
+    </resultMap>
+
+    <select id="selectAllLeaderTaskByMemberNumber" parameterType="string" resultMap="RM_LeaderTask">
+        SELECT
+          lt.id ltid,
+          lt.task lttask,
+          p.id pid,
+          p.name pname,
+          p.starttime pstarttime,
+          p.endtime pendtime
+
+        FROM leader_task lt
+        LEFT OUTER JOIN sys_user m ON lt.memberid = m.id
+        LEFT OUTER JOIN process p ON lt.processid = p.id
+        WHERE m.number = #{number}
+    </select>
+
+</mapper>

@@ -1,13 +1,20 @@
 package cn.edu.hyit.seppms.domain;
 
+import java.util.List;
+
 public class LeaderTask {
 
     private Integer id;
+    // 任务的详细说明
     private String task;
+    // 组员id
     private int memberId;
-    private int processId;
-    private int leaderId;
-    private String upFile;
+    // 过程id
+    private Process process;
+    // 组id
+    private int groupId;
+    // 组员上传作业文件
+    private List<File> files;
 
     public Integer getId() {
         return id;
@@ -33,27 +40,27 @@ public class LeaderTask {
         this.memberId = memberId;
     }
 
-    public int getProcessId() {
-        return processId;
+    public Process getProcess() {
+        return process;
     }
 
-    public void setProcessId(int processId) {
-        this.processId = processId;
+    public void setProcess(Process process) {
+        this.process = process;
     }
 
-    public int getLeaderId() {
-        return leaderId;
+    public int getGroupId() {
+        return groupId;
     }
 
-    public void setLeaderId(int leaderId) {
-        this.leaderId = leaderId;
+    public void setGroupId(int groupId) {
+        this.groupId = groupId;
     }
 
-    public String getUpFile() {
-        return upFile;
+    public List<File> getFiles() {
+        return files;
     }
 
-    public void setUpFile(String upFile) {
-        this.upFile = upFile;
+    public void setFiles(List<File> files) {
+        this.files = files;
     }
 }

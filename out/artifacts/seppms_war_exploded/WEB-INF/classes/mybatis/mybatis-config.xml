@@ -18,6 +18,9 @@
         <typeAlias type="cn.edu.hyit.seppms.domain.Reply" alias="_Reply"/>
         <typeAlias type="cn.edu.hyit.seppms.domain.TeacherTask" alias="_TeacherTask"/>
         <typeAlias type="cn.edu.hyit.seppms.domain.Topic" alias="_Topic"/>
+        <typeAlias type="cn.edu.hyit.seppms.domain.File" alias="_File"/>
+        <typeAlias type="cn.edu.hyit.seppms.domain.TeacherUpFile" alias="_TeacherUpFile"/>
+        <typeAlias type="cn.edu.hyit.seppms.domain.MemberUpFile" alias="_MemberUpFile"/>
 
     </typeAliases>
 
@@ -29,5 +32,6 @@
         <mapper resource="mapper/GroupInfoMapper.xml"/>
         <mapper resource="mapper/BelongMapper.xml"/>
         <mapper resource="mapper/TeacherTaskMapper.xml"/>
+        <mapper resource="mapper/LeaderTaskMapper.xml"/>
     </mappers>
 </configuration>
