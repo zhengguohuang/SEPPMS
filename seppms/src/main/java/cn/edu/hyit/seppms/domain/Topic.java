@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class Topic {
 	private int id;
-	private int useId;
+	private User user;
 	private String title;
 	private String content;
 	private Date createTime;
@@ -17,12 +17,12 @@ public class Topic {
 		this.id = id;
 	}
 
-	public int getUseId() {
-		return useId;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUseId(int useId) {
-		this.useId = useId;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public String getTitle() {

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="topic">
+    <resultMap id="RM_Topic" type="_Topic">
+        <id property="id" column="id" />
+        <result property="title" column="ttile"/>
+        <result property="content" column="tcontent"/>
+        <result property="createTime" column="tcreatetime"/>
+        <association property="user" javaType="_User">
+            <id property="id" column="uid"/>
+            <result property="name" column="uname"/>
+        </association>
+    </resultMap>
+
+    <select id="selectAll" resultMap="RM_Topic">
+        SELECT
+          t.id tid,
+          t.title ttile,
+          u.id uid,
+          u.name uname,
+          t.content tcontent,
+          t.createtime tcreatetime
+        FROM topic t
+        LEFT OUTER JOIN sys_user u ON t.userid = u.id
+    </select>
+</mapper>

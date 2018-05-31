@@ -33,5 +33,6 @@
         <mapper resource="mapper/BelongMapper.xml"/>
         <mapper resource="mapper/TeacherTaskMapper.xml"/>
         <mapper resource="mapper/LeaderTaskMapper.xml"/>
+        <mapper resource="mapper/TopicMapper.xml"/>
     </mappers>
 </configuration>

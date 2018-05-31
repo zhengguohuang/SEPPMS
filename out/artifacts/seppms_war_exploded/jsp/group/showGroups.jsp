@@ -73,40 +73,13 @@
                                                 </c:forEach>
                                             </td>
                                             <td class="project-actions">
-                                                <a href="showGroups.html" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看详情 </a>
+                                                <a href="showGroups.html" class="btn btn-white btn-sm"><i class="fa fa-search"></i> 查看详情 </a>
                                                 <a href="showGroups.html#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 申请加入 </a>
                                             </td>
                                         </tr>
                                     </c:forEach>
 
-                                    <tr>
-                                        <td class="project-status">
-                                            <span class="label label-default">已满员</span>
-                                        </td>
-                                        <td class="project-title">
-                                            <a href="project_detail.html">汽车销售管理系统</a>
-                                            <br/>
-                                            <small>创建于 2015.05.02</small>
-                                        </td>
-                                        <td class="project-completion">
-                                            <small>截止时间：2015.04.25</small>
-                                            <div class="progress progress-mini">
-                                                <div style="width: 48%;" class="progress-bar"></div>
-                                            </div>
-                                        </td>
-                                        <td class="project-people">
-                                            <a href="showGroups.html"><img alt="image" class="img-circle" src="img/a3.jpg"></a>
-                                            <a href="showGroups.html"><img alt="image" class="img-circle" src="img/a1.jpg"></a>
-                                            <a href="showGroups.html"><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-                                            <a href="showGroups.html"><img alt="image" class="img-circle" src="img/a4.jpg"></a>
-                                            <a href="showGroups.html"><img alt="image" class="img-circle" src="img/a5.jpg"></a>
-                                        </td>
-                                        <td class="project-actions">
-                                            <a href="showGroups.html#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看详情 </a>
-                                            <a href="showGroups.html#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 申请加入 </a>
-                                        </td>
-                                    </tr>
-                                    
+
                                     </tbody>
                                 </table>
                             </div>

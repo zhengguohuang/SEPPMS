@@ -50,45 +50,31 @@
 
                             <table class="table table-hover">
                                 <tbody>
-                                    <tr>
-                                        <td class="project-status">
-                                            <span class="label label-primary">进行中</span>
-                                        </td>
-                                        <td class="project-title">
-                                            <a href="project_detail.html">总体设计</a>
-                                            <br/>
-                                            <small>创建于 2018.05.02</small>
-                                        </td>
-                                        <td class="project-completion">
-                                                <small>截止时间： 2018.05.22</small>
+                                    <%--------------------------------------------%>
+                                    <c:forEach items="${list}" var="l">
+                                        <tr>
+                                            <td class="project-status">
+                                                <span class="label label-primary">进行中</span>
+                                            </td>
+                                            <td class="project-title">
+                                                <a href="project_detail.html">${l.process.name}</a>
+                                                <br/>
+                                                <small>创建于 ${l.process.startTime}</small>
+                                            </td>
+                                            <td class="project-completion">
+                                                <small>截止时间： ${l.process.endTime}</small>
                                                 <div class="progress progress-mini">
                                                     <div style="width: 50%;" class="progress-bar"></div>
                                                 </div>
-                                        </td>
-                                        <td class="project-actions">
-                                            <a href="tasks.html#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 提交任务 </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="project-status">
-                                            <span class="label label-default">已完成</span>
-                                        </td>
-                                        <td class="project-title">
-                                            <a href="project_detail.html">需求分析</a>
-                                            <br/>
-                                            <small>创建于 2015.04.15</small>
-                                        </td>
-                                        <td class="project-completion">
-                                            <small>截止时间：2015.04.25</small>
-                                            <div class="progress progress-mini">
-                                                <div style="width: 100%;" class="progress-bar"></div>
-                                            </div>
-                                        </td>
-                                        <td class="project-actions">
-                                            <a href="tasks.html#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 提交任务 </a>
-                                        </td>
-                                    </tr>
-                                    
+                                            </td>
+                                            <td class="project-actions">
+                                                <a href="" class="btn btn-white btn-sm"><i class="fa fa-search"></i> 查看详情 </a>
+                                                <a href="tasks.html#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 提交任务 </a>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
+                                    <%--------------------------------------------%>
+
                                     </tbody>
                                 </table>
                             </div>

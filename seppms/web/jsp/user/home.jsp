@@ -79,7 +79,7 @@
                         <li><a class="J_menuItem" href='<c:url value="/info/findAllMandate"/> '>资料文件</a>
                         </li>
                         <li>
-                            <a class="J_menuItem" href="tasks.html">我的任务</a>
+                            <a class="J_menuItem" href='<c:url value="/info/findAllLeaderTask"/> '>我的任务</a>
                         </li>
                         <li>
                             <a class="J_menuItem" href="graph_mark.html">我的成绩</a>
@@ -88,7 +88,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="J_menuItem" href="blog.html"><i class="fa fa-comment"></i> <span class="nav-label">交流讨论</span></a>
+                    <a class="J_menuItem" href='<c:url value="/topic/findAllTopic"/> '><i class="fa fa-comment"></i> <span class="nav-label">交流讨论</span></a>
                 </li>
                 <li>
                     <a class="J_menuItem" href=""><i class="fa fa-tasks"></i> <span class="nav-label">分配任务</span></a>
