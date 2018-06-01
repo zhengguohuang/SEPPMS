@@ -34,5 +34,6 @@
         <mapper resource="mapper/TeacherTaskMapper.xml"/>
         <mapper resource="mapper/LeaderTaskMapper.xml"/>
         <mapper resource="mapper/TopicMapper.xml"/>
+        <mapper resource="mapper/RelationMapper.xml"/>
     </mappers>
 </configuration>

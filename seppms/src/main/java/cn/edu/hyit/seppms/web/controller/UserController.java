@@ -1,6 +1,8 @@
 package cn.edu.hyit.seppms.web.controller;
 
+import cn.edu.hyit.seppms.domain.Relation;
 import cn.edu.hyit.seppms.domain.User;
+import cn.edu.hyit.seppms.service.RelationService;
 import cn.edu.hyit.seppms.service.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -22,6 +24,8 @@ public class UserController {
     @Resource(name = "userService")
     private UserService us;
 
+    @Resource(name = "relationService")
+    private RelationService rs;
     @RequestMapping("/user/findall")
     public String findAll(Model m){
         List<User> list = us.selectAll();
@@ -103,6 +107,8 @@ public class UserController {
     @RequestMapping(value = "/home")
     public String subLogin(Model m, User user){
         User u = us.selectByNumber(user.getNumber());
+        List<Relation> relations = rs.selectAllByNumber(u.getNumber());
+        m.addAttribute("relations", relations);
         m.addAttribute("user", u);
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(user.getNumber(), user.getPassword());
@@ -159,5 +165,64 @@ public class UserController {
         m.addAttribute("user", user);
 
         return "/user/profile";
+    }
+
+    /**
+     * 获得角色菜单,目前用于测试，完成后集成到/home中
+     */
+    @RequestMapping(value = "/user/getMenu", produces = "application/json;charset=utf-8")
+    public String getMenu(Model m){
+        //获取当前用户名
+        Subject subject = SecurityUtils.getSubject();
+        String number = (String) subject.getPrincipal();
+        List<Relation> relations = rs.selectAllByNumber(number);
+        m.addAttribute("relations", relations);
+
+        return "/user/home2";
+    }
+
+    /**
+     * 修改头像
+     */
+    @RequestMapping(value = "/user/changeAvatar", produces = "application/json;charset=utf-8")
+    public String changeAvatar(Model m){
+//        //获取当前用户名
+//        Subject subject = SecurityUtils.getSubject();
+//        String number = (String) subject.getPrincipal();
+//        List<Relation> relations = rs.selectAllByNumber(number);
+//        m.addAttribute("relations", relations);
+
+        return "/user/changeAvatar";
+    }
+
+    /**
+     * 修改资料
+     */
+    @RequestMapping(value = "/user/editProfile", produces = "application/json;charset=utf-8")
+    public String editProfile(Model m){
+        //获取当前用户名
+        Subject subject = SecurityUtils.getSubject();
+        String number = (String) subject.getPrincipal();
+//        List<Relation> relations = rs.selectAllByNumber(number);
+//        m.addAttribute("relations", relations);
+        User user = us.selectByNumber(number);
+        m.addAttribute("user", user);
+        return "/user/editProfile";
+    }
+
+    /**
+     * 提交修改
+     */
+    @RequestMapping(value = "/user/doEditProfile", produces = "application/json;charset=utf-8")
+    public String doEditProfile(Model m, User user){
+        Subject subject = SecurityUtils.getSubject();
+        String number = (String) subject.getPrincipal();
+        user.setNumber(number);
+        Boolean isSuccess = us.updateByNumber(user);
+        if (isSuccess){
+            return "redirect:/user/profile";
+        }else {
+            return "/fail";
+        }
     }
 }

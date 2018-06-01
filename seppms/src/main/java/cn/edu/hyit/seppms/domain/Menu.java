@@ -4,9 +4,9 @@ public class Menu {
     // 主键id
     private Integer id;
     // 菜单编号
-    private String code;
+    private int code;
     // 菜单父级编号
-    private String pcode;
+    private int pcode;
     // 当前菜单的所有父级编号
     private String pcodes;
     // 菜单名称
@@ -37,19 +37,19 @@ public class Menu {
 		this.id = id;
 	}
 
-	public String getCode() {
+	public int getCode() {
 		return code;
 	}
 
-	public void setCode(String code) {
+	public void setCode(int code) {
 		this.code = code;
 	}
 
-	public String getPcode() {
+	public int getPcode() {
 		return pcode;
 	}
 
-	public void setPcode(String pcode) {
+	public void setPcode(int pcode) {
 		this.pcode = pcode;
 	}
 

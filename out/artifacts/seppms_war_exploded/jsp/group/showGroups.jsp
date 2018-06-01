@@ -54,10 +54,15 @@
                                     <c:forEach items="${groups}" var="g">
                                         <tr>
                                             <td class="project-status">
-                                                <span class="label label-primary">招募中</span>
+                                                <c:if test="${'1' == g.status}">
+                                                    <span class="label label-primary">已确认</span>
+                                                </c:if>
+                                                <c:if test="${'1' != g.status}">
+                                                    <span class="label label-primary">未确认</span>
+                                                </c:if>
                                             </td>
                                             <td class="project-title">
-                                                <a href="project_detail.html"><c:out value="${g.name}"/></a>
+                                                <a href="groupDetail.jsp"><c:out value="${g.name}"/></a>
                                                 <br/>
                                                 <small>创建于 ${g.createTime}</small>
                                             </td>
@@ -73,7 +78,7 @@
                                                 </c:forEach>
                                             </td>
                                             <td class="project-actions">
-                                                <a href="showGroups.html" class="btn btn-white btn-sm"><i class="fa fa-search"></i> 查看详情 </a>
+                                                <a href='<c:url value="/group/groupDetail?gid=${g.id}"/> ' class="btn btn-white btn-sm"><i class="fa fa-search"></i> 查看详情 </a>
                                                 <a href="showGroups.html#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 申请加入 </a>
                                             </td>
                                         </tr>

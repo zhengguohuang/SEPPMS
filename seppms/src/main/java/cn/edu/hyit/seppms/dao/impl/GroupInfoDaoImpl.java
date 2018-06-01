@@ -22,7 +22,7 @@ public class GroupInfoDaoImpl extends SqlSessionDaoSupport implements BaseDao<Gr
     }
 
     public GroupInfo selectOne(Integer id) {
-        return null;
+        return getSqlSession().selectOne("group_info.selectOne", id);
     }
 
     public List<GroupInfo> selectAll() {

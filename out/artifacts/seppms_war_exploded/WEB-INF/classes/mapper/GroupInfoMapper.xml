@@ -97,4 +97,52 @@
         LEFT OUTER JOIN sys_user m ON b.userid = m.id
     </select>
 
+    <select id="selectOne" parameterType="int" resultMap="RM_GroupInfo">
+        SELECT
+        g.id gid,
+        g.name gname,
+        g.leaderid lid,
+        l.avatar lavatar,
+        l.number lnumber,
+        l.name lname,
+        l.sex lsex,
+        l.classname lclassname,
+        l.email lemail,
+        l.specialty lspecialty,
+        l.hobby lhobby,
+        l.status lstatus,
+        l.createtime lcreatetime,
+        g.teacherid tid,
+        t.avatar tavatar,
+        t.number tnumber,
+        t.name tname,
+        t.sex tsex,
+        t.classname tclassname,
+        t.email temail,
+        t.specialty tspecialty,
+        t.hobby thobby,
+        t.status tstatus,
+        t.createtime tcreatetime,
+        g.createtime gcreatetime,
+        g.status gstatus,
+        b.id bid,
+        b.userid uid,
+        m.avatar mavatar,
+        m.number mnumber,
+        m.name mname,
+        m.sex msex,
+        m.classname mclassname,
+        m.email memail,
+        m.specialty mspecialty,
+        m.hobby mhobby,
+        m.status mstatus,
+        m.createtime mcreatetime
+        FROM group_info g
+        LEFT OUTER JOIN sys_user l ON g.leaderid = l.id
+        LEFT OUTER JOIN sys_user t ON g.teacherid = t.id
+        LEFT OUTER JOIN belong b ON g.id = b.groupid
+        LEFT OUTER JOIN sys_user m ON b.userid = m.id
+        WHERE g.id = #{id}
+    </select>
+
 </mapper>

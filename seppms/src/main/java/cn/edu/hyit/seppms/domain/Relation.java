@@ -2,8 +2,10 @@ package cn.edu.hyit.seppms.domain;
 
 public class Relation {
 	private Integer id;
+	// 角色名：student leader admin
 	private String roleName;
-	private int menuId;
+	// 菜单对象
+	private Menu menu;
 
 	public Integer getId() {
 		return id;
@@ -21,11 +23,11 @@ public class Relation {
 		this.roleName = roleName;
 	}
 
-	public int getMenuId() {
-		return menuId;
+	public Menu getMenu() {
+		return menu;
 	}
 
-	public void setMenuId(int menuId) {
-		this.menuId = menuId;
+	public void setMenu(Menu menu) {
+		this.menu = menu;
 	}
 }

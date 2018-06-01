@@ -1,9 +1,9 @@
 package cn.edu.hyit.seppms.domain;
 
 public class Role {
-	Integer id;
-	String number;
-	String name;
+	private Integer id;
+	private String number;
+	private String name;
 
 	public Integer getId() {
 		return id;

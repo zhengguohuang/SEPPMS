@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sys_relation">
+    <resultMap id="RM_Relation" type="_Relation">
+        <id property="id" column="id" />
+        <result property="roleName" column="roname"/>
+        <association property="menu" javaType="_Menu">
+            <id property="id" column="mid"/>
+            <result property="name" column="mname"/>
+            <result property="pcode" column="mpcode"/>
+            <result property="url" column="murl"/>
+            <result property="icon" column="micon"/>
+            <result property="isMenu" column="mismenu"/>
+            <result property="pcode" column="mpcode"/>
+            <result property="num" column="mnum"/>
+        </association>
+    </resultMap>
+
+    <select id="selectAllByNumber" parameterType="string" resultMap="RM_Relation">
+        SELECT
+          u.id uid,
+          u.name uname,
+          u.number unumber,
+          ro.name roname,
+          m.id mid,
+          m.name mname,
+          m.pcode mpcode,
+          m.url murl,
+          m.icon micon,
+          m.ismenu mismenu,
+          m.pcode mpcode,
+          m.num mnum
+        FROM sys_role ro
+        LEFT OUTER JOIN sys_relation re ON ro.name = re.rolename
+        LEFT OUTER JOIN sys_user u ON ro.number = u.number
+        LEFT OUTER JOIN sys_menu m ON re.menuid = m.id
+        WHERE u.number = #{number}
+    </select>
+</mapper>

@@ -53,8 +53,15 @@
           #{createTime})
     </insert>
     <!--TODO-->
-    <update id="update">
-        UPDATE sys_user SET name = #{name} WHERE id = #{id}
+    <update id="updateByNumber" parameterType="_User">
+        UPDATE sys_user
+        SET
+            name = #{name},
+            classname = #{className},
+            email = #{email},
+            specialty = #{specialty},
+            hobby = #{hobby}
+        WHERE number = #{number}
     </update>
 
     <select id="selectOne" parameterType="int" resultMap="RM_User">

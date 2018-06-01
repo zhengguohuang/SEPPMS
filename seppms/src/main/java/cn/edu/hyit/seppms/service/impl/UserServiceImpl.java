@@ -10,7 +10,6 @@ import cn.edu.hyit.seppms.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 @Service("userService")
 public class UserServiceImpl extends BaseServiceImpl<User> implements UserService {
@@ -61,7 +60,9 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
         return dao.getUserByNumber(number);
     }
 
-
+    public Boolean updateByNumber(User user) {
+        return dao.updateByNumber(user);
+    }
 
 
 }

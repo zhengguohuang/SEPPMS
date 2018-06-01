@@ -52,7 +52,7 @@
                 <p>专长：${user.specialty}</p>
                 <p>hobby：${user.hobby}</p>
                 <p type="date">创建时间：${user.createTime}</p>
-                <button class="btn btn-info " type="button"><i class="fa fa-paste"></i> 编辑</button>
+                <div align="center"><a  href='<c:url value="/user/editProfile"/> '><button  class="btn btn-info " type="button"><i class="fa fa-paste"></i>编辑</button></a></div>
             </div>
         </div>
     </div>

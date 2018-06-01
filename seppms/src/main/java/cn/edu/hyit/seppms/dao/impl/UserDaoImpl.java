@@ -65,4 +65,15 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements BaseDao<User> {
     }
 
 
+    public Boolean updateByNumber(User user) {
+        try {
+            getSqlSession().update("sys_user.updateByNumber", user);
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }finally {
+
+        }
+        return true;
+    }
 }
