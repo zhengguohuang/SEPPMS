@@ -7,43 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d3cdd8d-fc95-435d-864a-22a7cfcd6c08" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/dao/impl/ReplyDaoImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/service/ReplyService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/service/impl/ReplyServiceImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/ReplyController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/seppms/src/main/resources/mapper/ReplyMapper.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/seppms/web/img/1000_big.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/seppms/web/img/1000_small.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/seppms/web/jsp/group/groupMemberDetail.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/seppms/web/jsp/topic/article.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/seppms/web/jsp/topic/topicDetail.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/seppms/web/jsp/topic/widgets.html" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/959bcaab-0588-4940-95a4-8fb240dd79e8.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/959bcaab-0588-4940-95a4-8fb240dd79e8.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/seppms/web/jsp/topic/addTopic.jsp" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/cn/edu/hyit/seppms/domain/Reply.class" afterPath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/cn/edu/hyit/seppms/domain/Reply.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/cn/edu/hyit/seppms/domain/Topic.class" afterPath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/cn/edu/hyit/seppms/domain/Topic.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/cn/edu/hyit/seppms/realm/CustomRealm.class" afterPath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/cn/edu/hyit/seppms/realm/CustomRealm.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/cn/edu/hyit/seppms/web/controller/GroupController.class" afterPath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/cn/edu/hyit/seppms/web/controller/GroupController.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/mybatis/mybatis-config.xml" afterPath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/mybatis/mybatis-config.xml" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/jsp/group/showGroups.jsp" afterPath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/jsp/group/showGroups.jsp" />
       <change beforePath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/dao/impl/TopicDaoImpl.java" afterPath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/dao/impl/TopicDaoImpl.java" />
-      <change beforePath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/domain/Reply.java" afterPath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/domain/Reply.java" />
-      <change beforePath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/domain/Topic.java" afterPath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/domain/Topic.java" />
-      <change beforePath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/realm/CustomRealm.java" afterPath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/realm/CustomRealm.java" />
-      <change beforePath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/service/TopicService.java" afterPath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/service/TopicService.java" />
-      <change beforePath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/service/impl/TopicServiceImpl.java" afterPath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/service/impl/TopicServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/GroupController.java" afterPath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/GroupController.java" />
+      <change beforePath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/ReplyController.java" afterPath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/ReplyController.java" />
       <change beforePath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/TopicController.java" afterPath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/TopicController.java" />
       <change beforePath="$PROJECT_DIR$/seppms/src/main/resources/mapper/TopicMapper.xml" afterPath="$PROJECT_DIR$/seppms/src/main/resources/mapper/TopicMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/seppms/src/main/resources/mybatis/mybatis-config.xml" afterPath="$PROJECT_DIR$/seppms/src/main/resources/mybatis/mybatis-config.xml" />
-      <change beforePath="$PROJECT_DIR$/seppms/target/classes/cn/edu/hyit/seppms/domain/Reply.class" afterPath="$PROJECT_DIR$/seppms/target/classes/cn/edu/hyit/seppms/domain/Reply.class" />
-      <change beforePath="$PROJECT_DIR$/seppms/target/classes/cn/edu/hyit/seppms/domain/Topic.class" afterPath="$PROJECT_DIR$/seppms/target/classes/cn/edu/hyit/seppms/domain/Topic.class" />
-      <change beforePath="$PROJECT_DIR$/seppms/target/classes/cn/edu/hyit/seppms/realm/CustomRealm.class" afterPath="$PROJECT_DIR$/seppms/target/classes/cn/edu/hyit/seppms/realm/CustomRealm.class" />
-      <change beforePath="$PROJECT_DIR$/seppms/target/classes/cn/edu/hyit/seppms/web/controller/GroupController.class" afterPath="$PROJECT_DIR$/seppms/target/classes/cn/edu/hyit/seppms/web/controller/GroupController.class" />
-      <change beforePath="$PROJECT_DIR$/seppms/target/classes/mybatis/mybatis-config.xml" afterPath="$PROJECT_DIR$/seppms/target/classes/mybatis/mybatis-config.xml" />
-      <change beforePath="$PROJECT_DIR$/seppms/web/jsp/group/groupDetail.jsp" afterPath="$PROJECT_DIR$/seppms/web/jsp/group/groupDetail.jsp" />
-      <change beforePath="$PROJECT_DIR$/seppms/web/jsp/group/showGroups.jsp" afterPath="$PROJECT_DIR$/seppms/web/jsp/group/showGroups.jsp" />
       <change beforePath="$PROJECT_DIR$/seppms/web/jsp/topic/topic.jsp" afterPath="$PROJECT_DIR$/seppms/web/jsp/topic/topic.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -92,34 +61,88 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="TopicController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/TopicController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="406">
+              <caret line="83" column="15" lean-forward="false" selection-start-line="83" selection-start-column="15" selection-end-line="83" selection-end-column="15" />
+              <folding>
+                <element signature="e#1751#1752#0" expanded="true" />
+                <element signature="e#1791#1792#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/service/BaseService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="174">
+              <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/service/impl/BaseServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+              <folding>
+                <element signature="e#353#354#0" expanded="true" />
+                <element signature="e#382#383#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="BaseDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/dao/BaseDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
+            <state relative-caret-position="186">
               <caret line="9" column="16" lean-forward="false" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReplyDaoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/dao/impl/ReplyDaoImpl.java">
+      <file leaf-file-name="UserDaoImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/dao/impl/UserDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="18" column="52" lean-forward="false" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
+            <state relative-caret-position="225">
+              <caret line="19" column="51" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="56" />
               <folding>
-                <element signature="e#523#524#0" expanded="true" />
-                <element signature="e#584#585#0" expanded="true" />
-                <element signature="e#717#718#0" expanded="true" />
-                <element signature="e#744#745#0" expanded="true" />
-                <element signature="e#782#783#0" expanded="true" />
-                <element signature="e#809#810#0" expanded="true" />
-                <element signature="e#867#868#0" expanded="true" />
-                <element signature="e#894#895#0" expanded="true" />
-                <element signature="e#926#927#0" expanded="true" />
-                <element signature="e#950#951#0" expanded="true" />
-                <element signature="e#1151#1152#0" expanded="true" />
-                <element signature="e#1233#1234#0" expanded="true" />
+                <element signature="e#582#583#0" expanded="true" />
+                <element signature="e#645#646#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TopicDaoImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/dao/impl/TopicDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="157">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding>
+                <element signature="e#478#479#0" expanded="true" />
+                <element signature="e#539#540#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TopicMapper.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/seppms/src/main/resources/mapper/TopicMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="51" column="19" lean-forward="true" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
+              <folding>
+                <marker date="1527840170886" expanded="true" signature="754:1089" ph="SELECT t.id topic" />
+                <marker date="1527840170886" expanded="true" signature="817:890" ph="SELECT count... reply" />
+                <marker date="1527840170886" expanded="true" signature="1181:1443" ph="SELECT t.id topic" />
+                <marker date="1527840170886" expanded="true" signature="1515:1726" ph="INSERT INTO topic... " />
               </folding>
             </state>
           </provider>
@@ -139,59 +162,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Reply.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/domain/Reply.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-              <folding>
-                <element signature="e#224#225#0" expanded="true" />
-                <element signature="e#248#249#0" expanded="true" />
-                <element signature="e#295#296#0" expanded="true" />
-                <element signature="e#330#331#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="topicDetail.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/seppms/web/jsp/topic/topicDetail.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="80" column="14" lean-forward="false" selection-start-line="80" selection-start-column="14" selection-end-line="80" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="348">
-                <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReplyController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/ReplyController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="617">
-              <caret line="50" column="15" lean-forward="false" selection-start-line="50" selection-start-column="15" selection-end-line="50" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="UserMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/seppms/src/main/resources/mapper/UserMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="53" column="13" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="53" selection-end-column="13" />
+            <state relative-caret-position="337">
+              <caret line="32" column="15" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="53" selection-end-column="13" />
               <folding>
                 <marker date="1527815167533" expanded="true" signature="1204:1712" ph="INSERT INTO sys_user... " />
                 <marker date="1527815167533" expanded="true" signature="1806:2029" ph="UPDATE sys_user... " />
@@ -207,11 +182,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserDaoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/dao/impl/UserDaoImpl.java">
+      <file leaf-file-name="ReplyController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/ReplyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="19" column="56" lean-forward="false" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="56" />
+            <state relative-caret-position="211">
+              <caret line="36" column="56" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="36" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -247,7 +222,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/servlet/JsoService.java" />
         <option value="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/MarkController.java" />
         <option value="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/servlet/BarService.java" />
         <option value="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/dao/BarDao.java" />
@@ -282,22 +256,23 @@
         <option value="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/GroupController.java" />
         <option value="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/service/impl/TopicServiceImpl.java" />
         <option value="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/service/TopicService.java" />
-        <option value="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/dao/impl/TopicDaoImpl.java" />
         <option value="$PROJECT_DIR$/seppms/src/main/resources/mybatis/mybatis-config.xml" />
         <option value="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/domain/Reply.java" />
         <option value="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/service/ReplyService.java" />
         <option value="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/service/impl/ReplyServiceImpl.java" />
         <option value="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/domain/Topic.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/959bcaab-0588-4940-95a4-8fb240dd79e8/console_1.sql" />
-        <option value="$PROJECT_DIR$/seppms/src/main/resources/mapper/TopicMapper.xml" />
-        <option value="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/TopicController.java" />
-        <option value="$PROJECT_DIR$/seppms/web/jsp/topic/topic.jsp" />
         <option value="$PROJECT_DIR$/seppms/web/jsp/topic/widgets.html" />
-        <option value="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/ReplyController.java" />
         <option value="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/dao/impl/ReplyDaoImpl.java" />
         <option value="$PROJECT_DIR$/seppms/src/main/resources/mapper/ReplyMapper.xml" />
         <option value="$PROJECT_DIR$/seppms/web/jsp/topic/topicDetail.jsp" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/seppms/web/jsp/topic/topic.jsp" />
+        <option value="$PROJECT_DIR$/seppms/web/jsp/topic/addTopic.jsp" />
+        <option value="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/ReplyController.java" />
+        <option value="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/TopicController.java" />
+        <option value="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/dao/impl/TopicDaoImpl.java" />
+        <option value="$PROJECT_DIR$/seppms/src/main/resources/mapper/TopicMapper.xml" />
       </list>
     </option>
   </component>
@@ -764,7 +739,8 @@
     <MESSAGE value="完成leadertasks 查询" />
     <MESSAGE value="完成交流讨论的查询" />
     <MESSAGE value="添加个人信息编辑，小组信息详情功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加个人信息编辑，小组信息详情功能" />
+    <MESSAGE value="新增评论功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增评论功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -799,31 +775,23 @@
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/TopicController.java</url>
-          <line>30</line>
-          <properties />
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/ReplyController.java</url>
-          <line>51</line>
+          <line>50</line>
           <properties />
           <option name="timeStamp" value="36" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/TopicController.java</url>
+          <line>84</line>
+          <properties />
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="37" />
+      <option name="time" value="40" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/seppms/web/jsp/topic/article.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/TeacherTaskController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
@@ -887,19 +855,6 @@
         <state relative-caret-position="261">
           <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/dao/impl/TopicDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="43" column="1" lean-forward="true" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
-          <folding>
-            <element signature="e#618#619#0" expanded="false" />
-            <element signature="e#689#690#0" expanded="false" />
-            <element signature="e#727#728#0" expanded="false" />
-            <element signature="e#795#796#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1070,35 +1025,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/domain/Topic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="12" column="32" lean-forward="false" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-          <folding>
-            <element signature="e#269#270#0" expanded="false" />
-            <element signature="e#315#316#0" expanded="false" />
-            <element signature="e#350#351#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/959bcaab-0588-4940-95a4-8fb240dd79e8/console_1.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="559">
           <caret line="47" column="21" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="50" selection-end-column="47" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seppms/src/main/resources/mapper/TopicMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="10" column="59" lean-forward="false" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
-          <folding>
-            <marker date="1527832153041" expanded="true" signature="754:1089" ph="SELECT t.id topic" />
-            <marker date="1527832153041" expanded="true" signature="817:890" ph="SELECT count... reply" />
-            <marker date="1527832153041" expanded="true" signature="1181:1443" ph="SELECT t.id topic" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1110,69 +1041,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/seppms/web/jsp/user/userList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="59" column="18" lean-forward="false" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-10">
           <caret line="46" column="40" lean-forward="true" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seppms/web/jsp/topic/topic.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="50" column="34" lean-forward="true" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/TopicController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="38" column="39" lean-forward="false" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/service/BaseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/service/impl/BaseServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-          <folding>
-            <element signature="e#353#354#0" expanded="false" />
-            <element signature="e#382#383#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/dao/BaseDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="9" column="16" lean-forward="false" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/dao/impl/UserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="19" column="56" lean-forward="false" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -1198,10 +1070,158 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/domain/Reply.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+          <folding>
+            <element signature="e#224#225#0" expanded="true" />
+            <element signature="e#248#249#0" expanded="true" />
+            <element signature="e#295#296#0" expanded="true" />
+            <element signature="e#330#331#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seppms/web/jsp/group/groupDetail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="81" column="41" lean-forward="true" selection-start-line="81" selection-start-column="41" selection-end-line="81" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seppms/web/jsp/user/register.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-696">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="348">
+            <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/domain/Topic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="12" column="30" lean-forward="false" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seppms/web/jsp/user/userList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="64" column="78" lean-forward="false" selection-start-line="64" selection-start-column="36" selection-end-line="64" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seppms/web/jsp/topic/topic.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="56" column="102" lean-forward="false" selection-start-line="56" selection-start-column="102" selection-end-line="56" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seppms/web/jsp/topic/addTopic.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="42" column="85" lean-forward="false" selection-start-line="42" selection-start-column="85" selection-end-line="42" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seppms/web/jsp/topic/topicDetail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="80" column="14" lean-forward="false" selection-start-line="80" selection-start-column="14" selection-end-line="80" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/ReplyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="36" column="56" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="36" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/TopicController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="83" column="15" lean-forward="false" selection-start-line="83" selection-start-column="15" selection-end-line="83" selection-end-column="15" />
+          <folding>
+            <element signature="e#1751#1752#0" expanded="true" />
+            <element signature="e#1791#1792#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/service/BaseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/service/impl/BaseServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+          <folding>
+            <element signature="e#353#354#0" expanded="true" />
+            <element signature="e#382#383#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/dao/impl/UserDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="19" column="51" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="56" />
+          <folding>
+            <element signature="e#582#583#0" expanded="true" />
+            <element signature="e#645#646#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/dao/BaseDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="9" column="16" lean-forward="false" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/dao/impl/TopicDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#478#479#0" expanded="true" />
+            <element signature="e#539#540#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/seppms/src/main/resources/mapper/UserMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="53" column="13" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="53" selection-end-column="13" />
+        <state relative-caret-position="337">
+          <caret line="32" column="15" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="53" selection-end-column="13" />
           <folding>
             <marker date="1527815167533" expanded="true" signature="1204:1712" ph="INSERT INTO sys_user... " />
             <marker date="1527815167533" expanded="true" signature="1806:2029" ph="UPDATE sys_user... " />
@@ -1228,59 +1248,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/domain/Reply.java">
+    <entry file="file://$PROJECT_DIR$/seppms/src/main/resources/mapper/TopicMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        <state relative-caret-position="555">
+          <caret line="51" column="19" lean-forward="true" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
           <folding>
-            <element signature="e#224#225#0" expanded="true" />
-            <element signature="e#248#249#0" expanded="true" />
-            <element signature="e#295#296#0" expanded="true" />
-            <element signature="e#330#331#0" expanded="true" />
+            <marker date="1527840170886" expanded="true" signature="754:1089" ph="SELECT t.id topic" />
+            <marker date="1527840170886" expanded="true" signature="817:890" ph="SELECT count... reply" />
+            <marker date="1527840170886" expanded="true" signature="1181:1443" ph="SELECT t.id topic" />
+            <marker date="1527840170886" expanded="true" signature="1515:1726" ph="INSERT INTO topic... " />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seppms/web/jsp/group/groupDetail.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="81" column="41" lean-forward="true" selection-start-line="81" selection-start-column="41" selection-end-line="81" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seppms/web/jsp/topic/topicDetail.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="80" column="14" lean-forward="false" selection-start-line="80" selection-start-column="14" selection-end-line="80" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seppms/web/jsp/user/register.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-696">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/ReplyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="617">
-          <caret line="50" column="15" lean-forward="false" selection-start-line="50" selection-start-column="15" selection-end-line="50" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="348">
-            <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-            <folding />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>

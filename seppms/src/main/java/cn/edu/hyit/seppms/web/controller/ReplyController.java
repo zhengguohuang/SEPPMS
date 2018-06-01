@@ -37,7 +37,6 @@ public class ReplyController {
         String number = (String) subject.getPrincipal();
         // 通过用户名取到用户id
         User user = us.selectByNumber(number);
-        // 用户id
         int id = user.getId();
         // 创建评论时间
         Date date=new Date();

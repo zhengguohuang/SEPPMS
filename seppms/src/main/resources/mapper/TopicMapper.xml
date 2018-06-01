@@ -43,4 +43,20 @@
         WHERE t.id = #{id}
     </select>
 
+    <insert id="insert" parameterType="_Topic">
+        INSERT INTO topic(
+        id,
+        userid,
+        title,
+        content,
+        createtime)
+        VALUES (
+        #{id},
+        #{user.id},
+        #{title},
+        #{content},
+        #{createTime})
+    </insert>
+
+
 </mapper>

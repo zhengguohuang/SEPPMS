@@ -14,7 +14,7 @@ import java.util.List;
 public class TopicDaoImpl extends SqlSessionDaoSupport implements BaseDao<Topic> {
 
     public void insert(Topic topic) {
-
+        getSqlSession().insert("topic.insert", topic);
     }
 
     public void update(Topic topic) {

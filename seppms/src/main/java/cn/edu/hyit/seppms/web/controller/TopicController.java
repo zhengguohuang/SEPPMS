@@ -2,14 +2,19 @@ package cn.edu.hyit.seppms.web.controller;
 
 import cn.edu.hyit.seppms.domain.Reply;
 import cn.edu.hyit.seppms.domain.Topic;
+import cn.edu.hyit.seppms.domain.User;
 import cn.edu.hyit.seppms.service.ReplyService;
 import cn.edu.hyit.seppms.service.TopicService;
+import cn.edu.hyit.seppms.service.UserService;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -18,6 +23,8 @@ public class TopicController {
     private TopicService ts;
     @Resource(name = "replyService")
     private ReplyService rs;
+    @Resource(name = "userService")
+    private UserService us;
     /**
      * 查询所有topic
      * @param m
@@ -47,5 +54,34 @@ public class TopicController {
 
         return "/topic/topicDetail";
     }
+    /**
+     * 跳到添加Topic界面
+     * @param
+     * @return
+     */
+    @RequestMapping("/topic/toAddTopic")
+    public String topicDetail(){
+        return "/topic/addTopic";
+    }
 
+    /**
+     * 添加Topic
+     * @param
+     * @return
+     */
+    @RequestMapping("/topic/doAddTopic")
+    public String dopicDetail(Topic topic){
+        // 创建评论时间
+        Date date=new Date();
+        java.sql.Date sqldate = new java.sql.Date(date.getTime());
+        topic.setCreateTime(sqldate);
+        //获取当前用户名
+        Subject subject = SecurityUtils.getSubject();
+        String number = (String) subject.getPrincipal();
+        // 通过用户名取到用户id
+        User user = us.selectByNumber(number);
+        topic.setUser(user);
+        ts.insert(topic);
+        return "redirect:/topic/findAllTopic";
+    }
 }
