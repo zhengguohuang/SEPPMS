@@ -4,10 +4,11 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="topic">
     <resultMap id="RM_Topic" type="_Topic">
-        <id property="id" column="id" />
+        <id property="id" column="tid" />
         <result property="title" column="ttile"/>
         <result property="content" column="tcontent"/>
         <result property="createTime" column="tcreatetime"/>
+        <result property="replyCount" column="replyCount"/>
         <association property="user" javaType="_User">
             <id property="id" column="uid"/>
             <result property="name" column="uname"/>
@@ -18,11 +19,28 @@
         SELECT
           t.id tid,
           t.title ttile,
+          (SELECT count(*)
+           FROM reply r
+           WHERE r.topicid = t.id) replycount,
+          u.id uid,
+          u.name uname,
+          t.content tcontent,
+          t.createtime tcreatetime
+        FROM topic t
+          LEFT OUTER JOIN sys_user u ON t.userid = u.id
+    </select>
+
+    <select id="selectOne" parameterType="int" resultMap="RM_Topic">
+       SELECT
+          t.id tid,
+          t.title ttile,
           u.id uid,
           u.name uname,
           t.content tcontent,
           t.createtime tcreatetime
         FROM topic t
         LEFT OUTER JOIN sys_user u ON t.userid = u.id
+        WHERE t.id = #{id}
     </select>
+
 </mapper>

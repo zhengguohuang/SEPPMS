@@ -3,6 +3,7 @@ package cn.edu.hyit.seppms.dao.impl;
 
 import cn.edu.hyit.seppms.dao.BaseDao;
 import cn.edu.hyit.seppms.domain.LeaderTask;
+import cn.edu.hyit.seppms.domain.Reply;
 import cn.edu.hyit.seppms.domain.Topic;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.stereotype.Repository;
@@ -25,7 +26,7 @@ public class TopicDaoImpl extends SqlSessionDaoSupport implements BaseDao<Topic>
     }
 
     public Topic selectOne(Integer id) {
-        return null;
+        return getSqlSession().selectOne("topic.selectOne", id);
     }
 
     public List<Topic> selectAll() {
@@ -39,4 +40,5 @@ public class TopicDaoImpl extends SqlSessionDaoSupport implements BaseDao<Topic>
     public int selectCount() {
         return 0;
     }
+
 }

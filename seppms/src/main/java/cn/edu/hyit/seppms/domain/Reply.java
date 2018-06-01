@@ -1,9 +1,21 @@
 package cn.edu.hyit.seppms.domain;
+
+import java.sql.Date;
+
 public class Reply {
 	private Integer id;
-	private Integer userId;
-	private Integer topicId;
+	private User user;
+	private int topicId;
 	private String content;
+	private Date createTime;
+
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
 
 	public Integer getId() {
 		return id;
@@ -13,19 +25,19 @@ public class Reply {
 		this.id = id;
 	}
 
-	public Integer getUserId() {
-		return userId;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	public Integer getTopicId() {
+	public int getTopicId() {
 		return topicId;
 	}
 
-	public void setTopicId(Integer topicId) {
+	public void setTopicId(int topicId) {
 		this.topicId = topicId;
 	}
 

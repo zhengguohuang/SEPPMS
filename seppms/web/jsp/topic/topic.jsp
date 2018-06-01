@@ -25,7 +25,7 @@
                 <c:forEach items="${list}" var="t">
                     <div class="ibox">
                         <div class="ibox-content">
-                            <a href="article.html" class="btn-link">
+                            <a href='<c:url value="/topic/topicDetail?tid=${t.id}"/> ' class="btn-link">
                                 <h2>
                                     ${t.title}
                                 </h2>
@@ -45,8 +45,7 @@
                                 <div class="col-md-6">
                                     <div class="small text-right">
                                         <h5>状态：</h5>
-                                        <div> <i class="fa fa-comments-o"> </i> 56 评论 </div>
-                                        <i class="fa fa-eye"> </i> 144 浏览
+                                        <div> <i class="fa fa-comments-o"> </i> ${t.replyCount} 评论 </div>
                                     </div>
                                 </div>
                             </div>

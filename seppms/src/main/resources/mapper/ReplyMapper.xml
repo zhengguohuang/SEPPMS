@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="reply">
+    <resultMap id="RM_Reply" type="_Reply">
+        <id property="id" column="rid" />
+        <result property="content" column="rcontent"/>
+        <result property="createTime" column="rcreatetime"/>
+        <association property="user" javaType="_User">
+            <id property="id" column="uid"/>
+            <result property="name" column="uname"/>
+            <result property="avatar" column="uavatar"/>
+        </association>
+    </resultMap>
+
+    <select id="selectAll" resultMap="RM_Reply">
+    </select>
+
+    <select id="selectAllReplyByTopicId" parameterType="int" resultMap="RM_Reply">
+        SELECT
+          r.id rid,
+          r.content rcontent,
+          r.createtime rcreatetime,
+          u.id uid,
+          u.name uname,
+          u.avatar uavatar
+
+        FROM reply r
+        LEFT OUTER JOIN sys_user u ON r.userid = u.id
+        WHERE r.topicid = #{id}
+    </select>
+
+    <select id="countReplyByTopicId" parameterType="int" resultType="int">
+        SELECT count(*)
+        FROM reply
+        WHERE topicid = #{id}
+    </select>
+
+    <insert id="insert" parameterType="_Reply">
+        INSERT INTO reply(
+        id,
+        userid,
+        topicid,
+        content,
+        createtime)
+        VALUES (
+        #{id},
+        #{user.id},
+        #{topicId},
+        #{content},
+        #{createTime})
+    </insert>
+
+</mapper>

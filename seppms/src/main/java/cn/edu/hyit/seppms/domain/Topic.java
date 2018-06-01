@@ -8,6 +8,15 @@ public class Topic {
 	private String title;
 	private String content;
 	private Date createTime;
+	private int replyCount;
+
+	public int getReplyCount() {
+		return replyCount;
+	}
+
+	public void setReplyCount(int replyCount) {
+		this.replyCount = replyCount;
+	}
 
 	public int getId() {
 		return id;

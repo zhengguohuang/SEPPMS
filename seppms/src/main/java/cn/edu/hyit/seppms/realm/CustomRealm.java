@@ -96,7 +96,7 @@ public class CustomRealm extends AuthorizingRealm {
         // 普通md5加密
 //        Md5Hash md5Hash = new Md5Hash("123");
         // md5盐加密
-        Md5Hash md5Hash = new Md5Hash("123", "1000");//a81082604404c078e80f8bf501133abe
+        Md5Hash md5Hash = new Md5Hash("123", "1151401123");//a81082604404c078e80f8bf501133abe
         System.out.println(md5Hash.toString());
 
     }

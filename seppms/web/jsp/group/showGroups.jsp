@@ -74,7 +74,7 @@
                                             </td>
                                             <td class="project-people">
                                                 <c:forEach items="${g.members}" var="m">
-                                                    <a href="showGroups.html"><img alt="image" class="img-circle" src="${m.avatar}"></a>
+                                                    <a href='<c:url value="/group/groupMemberDetail?mnumber=${m.number}"/> '><img alt="image" class="img-circle" src="${m.avatar}"></a>
                                                 </c:forEach>
                                             </td>
                                             <td class="project-actions">

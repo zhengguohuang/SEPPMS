@@ -47,13 +47,13 @@
                                 <dl class="dl-horizontal">
                                     <dt>状态：</dt>
                                     <dd>
-                                        <c:if test="${'1' == group.status}">
-                                            <span class="label label-primary">已确认</span>
-                                        </c:if>
-                                        <c:if test="${'1' != group.status}">
-                                            <span class="label label-primary">未确认</span>
-                                        </c:if>
-                                    </dd>
+                                    <c:if test="${'1' == group.status}">
+                                        <span class="label label-primary">已确认</span>
+                                    </c:if>
+                                    <c:if test="${'1' != group.status}">
+                                        <span class="label label-primary">未确认</span>
+                                    </c:if>
+                                </dd>
                                 </dl>
                                 <dl class="dl-horizontal">
 
@@ -61,7 +61,7 @@
                                     <dd class="project-people">
                                         <%--------------%>
                                             <c:forEach items="${group.members}" var="m">
-                                                <a href="">
+                                                <a href='<c:url value="/group/groupMemberDetail?mnumber=${m.number}"/> '>
                                                     <img alt="image" class="img-circle" src="${m.avatar}">
                                                 </a>
                                             </c:forEach>

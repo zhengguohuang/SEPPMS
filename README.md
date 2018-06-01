@@ -9,8 +9,9 @@ SEPPMS
 ├── README.md -- 说明
 ├── idea-seppms-project.iml -- idea生成的配置文件
 └── seppms -- 项目源码
+     ├── sql -- MySQL数据库脚本
      ├── src -- java后台代码
-     ├── web -- web前端代码
+     └── web -- web前端代码
 ```
 
 ### 技术选型
@@ -18,6 +19,7 @@ SEPPMS
 #### 后端技术:
 技术 | 名称 | 官网
 ----|------|----
+Shiro | 权限控制框架 | [http://shiro.apache.org/](http://shiro.apache.org/)
 Spring Framework | 容器  | [http://projects.spring.io/spring-framework/](http://projects.spring.io/spring-framework/)
 SpringMVC | MVC框架  | [http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc)
 MyBatis | ORM框架  | [http://www.mybatis.org/mybatis-3/zh/index.html](http://www.mybatis.org/mybatis-3/zh/index.html)
@@ -160,7 +162,8 @@ maven编译安装SEPPMS/pom.xml文件即可
 - [Bootstrap在线手册](http://www.bootcss.com/ "Bootstrap在线手册")
 
 - [Git官网中文文档](https://git-scm.com/book/zh/v2 "Git官网中文文档")
-
+## 赞助
+![login]()
 ## 许可证
 
 [MIT](LICENSE "MIT")
