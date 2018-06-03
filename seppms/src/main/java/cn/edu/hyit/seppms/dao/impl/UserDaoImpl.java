@@ -6,22 +6,24 @@ import cn.edu.hyit.seppms.domain.User;
 import org.apache.ibatis.session.RowBounds;
 import org.apache.shiro.util.CollectionUtils;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
 @Repository("userDao")
 public class UserDaoImpl extends SqlSessionDaoSupport implements BaseDao<User> {
 
-    public void insert(User user) {
-        getSqlSession().insert("sys_user.insert", user);
+    public Boolean insert(User user) {
+        int result = getSqlSession().insert("sys_user.insert", user);
+        if(result > 0){
+            return true;
+        }
+        return false;
     }
 
-    public void update(User user) {
-        getSqlSession().update("sys_user.update", user);
+    public Boolean update(User user) {
+        int rows = getSqlSession().update("sys_user.update", user);
+        return null;
     }
 
     public void delete(Integer id) {
@@ -75,5 +77,8 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements BaseDao<User> {
 
         }
         return true;
+    }
+
+    public void updatePasswordByNumber(User user) {
     }
 }

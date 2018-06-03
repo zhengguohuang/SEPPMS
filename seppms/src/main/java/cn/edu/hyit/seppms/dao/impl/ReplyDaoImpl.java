@@ -3,9 +3,6 @@ package cn.edu.hyit.seppms.dao.impl;
 
 import cn.edu.hyit.seppms.dao.BaseDao;
 import cn.edu.hyit.seppms.domain.Reply;
-import cn.edu.hyit.seppms.domain.User;
-import org.apache.ibatis.session.RowBounds;
-import org.apache.shiro.util.CollectionUtils;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.stereotype.Repository;
 
@@ -15,12 +12,17 @@ import java.util.List;
 public class ReplyDaoImpl extends SqlSessionDaoSupport implements BaseDao<Reply> {
 
 
-    public void insert(Reply reply) {
-        getSqlSession().insert("reply.insert", reply);
+    public Boolean insert(Reply reply) {
+        int rows = getSqlSession().insert("reply.insert", reply);
+        if(rows > 0){
+            return true;
+        }
+        return false;
     }
 
-    public void update(Reply reply) {
+    public Boolean update(Reply reply) {
 
+        return null;
     }
 
     public void delete(Integer id) {

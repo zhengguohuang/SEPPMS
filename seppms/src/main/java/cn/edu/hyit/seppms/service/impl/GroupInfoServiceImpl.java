@@ -1,6 +1,7 @@
 package cn.edu.hyit.seppms.service.impl;
 
 import cn.edu.hyit.seppms.dao.BaseDao;
+import cn.edu.hyit.seppms.dao.impl.GroupInfoDaoImpl;
 import cn.edu.hyit.seppms.domain.GroupInfo;
 import cn.edu.hyit.seppms.service.GroupInfoService;
 import org.springframework.stereotype.Service;
@@ -17,7 +18,16 @@ public class GroupInfoServiceImpl extends BaseServiceImpl<GroupInfo> implements 
     }
 
     @Resource(name = "groupInfoDao")
-    private BaseDao<GroupInfo> groupInfoDao;
+    private GroupInfoDaoImpl dao;
 
 
+    @Override
+    public GroupInfo selectByLeaderId(Integer id) {
+        return dao.selectByLeaderId(id);
+    }
+
+    @Override
+    public int selectGroupIdByLeaderId(Integer id) {
+        return dao.selectGroupIdByLeaderId(id);
+    }
 }

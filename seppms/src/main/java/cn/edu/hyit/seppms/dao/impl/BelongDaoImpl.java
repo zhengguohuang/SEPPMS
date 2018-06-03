@@ -9,12 +9,18 @@ import java.util.List;
 
 @Repository("belongDao")
 public class BelongDaoImpl extends SqlSessionDaoSupport implements BaseDao<Belong> {
-    public void insert(Belong belong) {
-
+    public Boolean insert(Belong belong) {
+        int result = getSqlSession().insert("belong.insert", belong);
+        if (result>0){
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public void update(Belong belong) {
+    public Boolean update(Belong belong) {
 
+        return null;
     }
 
     public void delete(Integer id) {
@@ -35,5 +41,9 @@ public class BelongDaoImpl extends SqlSessionDaoSupport implements BaseDao<Belon
 
     public int selectCount() {
         return 0;
+    }
+
+    public int getGroupCountByUserId(Integer userId) {
+        return getSqlSession().selectOne("belong.getGroupCountByUserId", userId);
     }
 }

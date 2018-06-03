@@ -40,6 +40,9 @@
                     <input type="text" class="form-control" placeholder="请输入姓名" name="name" required="">
                 </div>
                 <div class="form-group">
+                    <input type="text" class="form-control" placeholder="请输入邮箱" name="email" required="">
+                </div>
+                <div class="form-group">
                     <input type="password" class="form-control" placeholder="请输入密码" name="password" required="">
                 </div>
                 <div class="form-group">

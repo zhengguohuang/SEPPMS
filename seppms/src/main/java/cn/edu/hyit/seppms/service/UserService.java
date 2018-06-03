@@ -12,4 +12,6 @@ public interface UserService extends BaseService<User> {
     public User getUserByNumber(String number);
 
     public Boolean updateByNumber(User user);
+
+    public void updatePasswordByNumber(User user);
 }

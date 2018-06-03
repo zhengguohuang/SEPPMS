@@ -41,4 +41,19 @@
         WHERE b.groupid = #{groupId};
     </select>
 
+    <select id="getGroupCountByUserId" parameterType="int" resultType="int">
+        SELECT count(*) FROM belong WHERE userid = #{userId}
+    </select>
+
+    <insert id="insert" parameterType="_Belong">
+        INSERT INTO belong(
+        id,
+        userid,
+        groupid)
+        VALUES (
+        #{id},
+        #{user.id},
+        #{groupId})
+    </insert>
+
 </mapper>

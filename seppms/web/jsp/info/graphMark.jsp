@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 
 <head>
@@ -15,6 +16,10 @@
 
     <link href="../../css/animate.css" rel="stylesheet">
     <link href="../../css/style.css?v=4.1.0" rel="stylesheet">
+
+
+
+
 
 </head>
 
@@ -80,8 +85,112 @@
     <!-- 自定义js -->
     <script src="../../js/content.js?v=1.0.0"></script>
 
-    <!-- ECharts demo data -->
-    <script src="../../js/demo/echarts-demo.js"></script>
+    <script>
+        $(function () {
+
+            var barChart = echarts.init(document.getElementById("echarts-bar-chart"));
+            var baroption = {
+                title : {
+                    text: '我的成绩与班级平均'
+                },
+                tooltip : {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data:['我的成绩','班级平均成绩']
+                },
+                grid:{
+                    x:30,
+                    x2:40,
+                    y2:24
+                },
+                calculable : true,
+                xAxis : [
+                    {
+                        type : 'category',
+                        data : ['平时成绩','文档成绩','答辩成绩']
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'value'
+                    }
+                ],
+                series : [
+                    {
+                        name:'我的成绩',
+                        type:'bar',
+                        data:[<c:out value="${myMark.daily}" />, <c:out value="${myMark.reply}" />, <c:out value="${myMark.document}" />],
+                        markPoint : {
+                            data : [
+                                {type : 'max', name: '最大值'},
+                                {type : 'min', name: '最小值'}
+                            ]
+                        },
+                        markLine : {
+                            data : [
+                                {type : 'average', name: '平均值'}
+                            ]
+                        }
+                    },
+                    {
+                        name:'班级平均',
+                        type:'bar',
+                        data:[<c:out value="${classDaily}" />, <c:out value="${classReply}" />, <c:out value="${clssDocument}" />],
+                        markPoint : {
+                            data : [
+                                {type : 'max', name: '最大值'},
+                                {type : 'min', name: '最小值'}
+                            ]
+                        },
+                        markLine : {
+                            data : [
+                                {type : 'average', name : '平均值'}
+                            ]
+                        }
+                    }
+                ]
+            };
+            barChart.setOption(baroption);
+            $(window).resize(barChart.resize);
+
+            var pieChart = echarts.init(document.getElementById("echarts-pie-chart"));
+            var pieoption = {
+                title : {
+                    text: '实践成绩组成',
+                    subtext: '',
+                    x:'center'
+                },
+                tooltip : {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                legend: {
+                    orient : 'vertical',
+                    x : 'left',
+                    data:['平时成绩','答辩成绩','文档成绩']
+                },
+                calculable : true,
+                series : [
+                    {
+                        name:'成绩组成',
+                        type:'pie',
+                        radius : '55%',
+                        center: ['50%', '60%'],
+                        data:[
+                            {value:10, name:'平时成绩'},
+                            {value:60, name:'答辩成绩'},
+                            {value:30, name:'文档成绩'}
+                        ]
+                    }
+                ]
+            };
+            pieChart.setOption(pieoption);
+            $(window).resize(pieChart.resize);
+
+        });
+
+    </script>
 
 </body>
 

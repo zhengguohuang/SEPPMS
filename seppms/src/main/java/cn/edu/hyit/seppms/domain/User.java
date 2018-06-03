@@ -27,6 +27,16 @@ public class User {
     private int status;
     // 创建时间
     private Date createTime;
+    // 验证码
+    private String code;
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 
     public Integer getId() {
         return id;

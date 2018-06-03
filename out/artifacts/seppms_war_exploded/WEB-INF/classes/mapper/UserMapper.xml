@@ -17,6 +17,7 @@
         <result property="hobby" column="hobby"/>
         <result property="status" column="status"/>
         <result property="createTime" column="createtime"/>
+        <result property="code" column="code"/>
 
         <!--&lt;!&ndash;映射一对多关联关系&ndash;&gt;-->
         <!--<collection property="orders" ofType="_Order">-->
@@ -52,7 +53,6 @@
           #{status},
           #{createTime})
     </insert>
-    <!--TODO-->
     <update id="updateByNumber" parameterType="_User">
         UPDATE sys_user
         SET
@@ -60,7 +60,8 @@
             classname = #{className},
             email = #{email},
             specialty = #{specialty},
-            hobby = #{hobby}
+            hobby = #{hobby},
+            code = #{code}
         WHERE number = #{number}
     </update>
 
@@ -81,6 +82,7 @@
         FROM sys_user
         WHERE id = #{id}
     </select>
+
 
     <select id="selectAll" resultMap="RM_User">
         SELECT
@@ -111,7 +113,8 @@
         specialty,
         hobby,
         status,
-        createtime
+        createtime,
+        code
         FROM sys_user
         WHERE number = #{number}
     </select>
@@ -143,4 +146,11 @@
         FROM sys_user
         WHERE number = #{number}
     </select>
+
+    <update id="updatePasswordByNumber" parameterType="_User">
+        UPDATE sys_user
+        SET
+        password = #{password}
+        WHERE number = #{number}
+    </update>
 </mapper>

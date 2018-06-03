@@ -14,8 +14,8 @@ public abstract class BaseServiceImpl<T> implements BaseService<T> {
         this.dao = dao;
     }
 
-    public void insert(T t) {
-        dao.insert(t);
+    public Boolean insert(T t) {
+        return dao.insert(t);
     }
 
     public void update(T t) {

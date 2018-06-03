@@ -30,7 +30,10 @@
                     <div class="ibox-title">
                         <h5>所有小组</h5>
                         <div class="ibox-tools">
-                            <a href="showGroups.html" class="btn btn-primary btn-xs">创建新组</a>
+                            <c:if test="${'0' == isHasGroup}">
+                                <a href='<c:url value="/group/toCreateGroup"/> ' class="btn btn-primary btn-xs">创建新组</a>
+                            </c:if>
+
                         </div>
                     </div>
                     <div class="ibox-content">
@@ -79,7 +82,9 @@
                                             </td>
                                             <td class="project-actions">
                                                 <a href='<c:url value="/group/groupDetail?gid=${g.id}"/> ' class="btn btn-white btn-sm"><i class="fa fa-search"></i> 查看详情 </a>
-                                                <a href="showGroups.html#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 申请加入 </a>
+                                                <c:if test="${'0' == isHasGroup}">
+                                                    <a href='<c:url value="/group/joinGroup?groupId=${g.id}"/> ' class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 申请加入 </a>
+                                                </c:if>
                                             </td>
                                         </tr>
                                     </c:forEach>

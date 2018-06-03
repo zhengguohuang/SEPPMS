@@ -10,12 +10,20 @@ import java.util.List;
 
 @Repository("orderDao")
 public class OrderDaoImpl extends SqlSessionDaoSupport implements BaseDao<Order> {
-    public void insert(Order order) {
-        getSqlSession().insert("orders.insert", order);
+    public Boolean insert(Order order) {
+        int rows = getSqlSession().insert("orders.insert", order);
+        if(rows > 0){
+            return true;
+        }
+        return false;
     }
 
-    public void update(Order order) {
-        getSqlSession().update("orders.update", order);
+    public Boolean update(Order order) {
+        int rows = getSqlSession().update("orders.update", order);
+        if(rows > 0){
+            return true;
+        }
+        return false;
     }
 
     public void delete(Integer id) {

@@ -1,6 +1,5 @@
 package cn.edu.hyit.seppms.realm;
 
-import cn.edu.hyit.seppms.dao.impl.UserDaoImpl;
 import cn.edu.hyit.seppms.domain.User;
 import cn.edu.hyit.seppms.service.RoleService;
 import cn.edu.hyit.seppms.service.UserService;
@@ -16,7 +15,9 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 
 import javax.annotation.Resource;
-import java.util.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class CustomRealm extends AuthorizingRealm {
 

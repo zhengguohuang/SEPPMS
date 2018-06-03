@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mark">
+    <resultMap id="RM_Mark" type="_Mark">
+        <id property="id" column="mid"/>
+        <result property="teacherId" column="mteacherid"/>
+        <result property="studentId" column="mstudentid"/>
+        <result property="daily" column="mdaily"/>
+        <result property="reply" column="mreply"/>
+        <result property="document" column="mdocument"/>
+    </resultMap>
+
+    <select id="selectOneByStudentId" parameterType="int" resultMap="RM_Mark">
+        SELECT
+          id mid,
+          teacherid mteacherid,
+          studentid mstudentid,
+          daily mdaily,
+          reply mreply,
+          document mdocument
+        FROM mark
+        WHERE studentid = #{id}
+    </select>
+
+
+    <select id="getDailyAvg" resultType="int">
+        SELECT
+        AVG (daily)
+        FROM mark
+    </select>
+
+
+    <select id="getReplyAvg" resultType="int">
+        SELECT
+        AVG (reply)
+        FROM mark
+    </select>
+
+
+    <select id="getDocumentAvg" resultType="int">
+        SELECT
+        AVG (document)
+        FROM mark
+    </select>
+</mapper>

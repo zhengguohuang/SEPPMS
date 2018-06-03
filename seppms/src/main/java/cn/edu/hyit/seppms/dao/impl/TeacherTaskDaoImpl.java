@@ -3,9 +3,6 @@ package cn.edu.hyit.seppms.dao.impl;
 
 import cn.edu.hyit.seppms.dao.BaseDao;
 import cn.edu.hyit.seppms.domain.TeacherTask;
-import cn.edu.hyit.seppms.domain.User;
-import org.apache.ibatis.session.RowBounds;
-import org.apache.shiro.util.CollectionUtils;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.stereotype.Repository;
 
@@ -15,12 +12,14 @@ import java.util.List;
 public class TeacherTaskDaoImpl extends SqlSessionDaoSupport implements BaseDao<TeacherTask> {
 
 
-    public void insert(TeacherTask teacherTask) {
+    public Boolean insert(TeacherTask teacherTask) {
 
+        return null;
     }
 
-    public void update(TeacherTask teacherTask) {
+    public Boolean update(TeacherTask teacherTask) {
 
+        return null;
     }
 
     public void delete(Integer id) {

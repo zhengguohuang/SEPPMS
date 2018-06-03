@@ -64,5 +64,10 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
         return dao.updateByNumber(user);
     }
 
+    @Override
+    public void updatePasswordByNumber(User user) {
+        dao.updatePasswordByNumber(user);
+    }
+
 
 }

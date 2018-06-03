@@ -9,12 +9,17 @@ import java.util.List;
 
 @Repository("groupInfoDao")
 public class GroupInfoDaoImpl extends SqlSessionDaoSupport implements BaseDao<GroupInfo> {
-    public void insert(GroupInfo groupInfo) {
-
+    public Boolean insert(GroupInfo groupInfo) {
+        int result = getSqlSession().insert("group_info.insert", groupInfo);
+        if(result > 0){
+            return true;
+        }
+        return false;
     }
 
-    public void update(GroupInfo groupInfo) {
+    public Boolean update(GroupInfo groupInfo) {
 
+        return null;
     }
 
     public void delete(Integer id) {
@@ -35,5 +40,13 @@ public class GroupInfoDaoImpl extends SqlSessionDaoSupport implements BaseDao<Gr
 
     public int selectCount() {
         return 0;
+    }
+
+    public GroupInfo selectByLeaderId(Integer id) {
+        return getSqlSession().selectOne("group_info.selectByLeaderId", id);
+    }
+
+    public int selectGroupIdByLeaderId(Integer id) {
+        return getSqlSession().selectOne("group_info.selectGroupIdByLeaderId", id);
     }
 }

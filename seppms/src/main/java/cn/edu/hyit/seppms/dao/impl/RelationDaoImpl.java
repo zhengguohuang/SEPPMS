@@ -3,9 +3,6 @@ package cn.edu.hyit.seppms.dao.impl;
 
 import cn.edu.hyit.seppms.dao.BaseDao;
 import cn.edu.hyit.seppms.domain.Relation;
-import cn.edu.hyit.seppms.domain.User;
-import org.apache.ibatis.session.RowBounds;
-import org.apache.shiro.util.CollectionUtils;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.stereotype.Repository;
 
@@ -15,12 +12,14 @@ import java.util.List;
 public class RelationDaoImpl extends SqlSessionDaoSupport implements BaseDao<Relation> {
 
 
-    public void insert(Relation relation) {
+    public Boolean insert(Relation relation) {
 
+        return null;
     }
 
-    public void update(Relation relation) {
+    public Boolean update(Relation relation) {
 
+        return null;
     }
 
     public void delete(Integer id) {

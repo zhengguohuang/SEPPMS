@@ -1,9 +1,13 @@
 package cn.edu.hyit.seppms.web.controller;
 
 import cn.edu.hyit.seppms.domain.Relation;
+import cn.edu.hyit.seppms.domain.Role;
 import cn.edu.hyit.seppms.domain.User;
 import cn.edu.hyit.seppms.service.RelationService;
+import cn.edu.hyit.seppms.service.RoleService;
 import cn.edu.hyit.seppms.service.UserService;
+import cn.edu.hyit.seppms.util.MailUtil;
+import cn.edu.hyit.seppms.util.ToolUtil;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.crypto.hash.Md5Hash;
@@ -20,12 +24,16 @@ import java.util.List;
 
 @Controller
 public class UserController {
+    private static final String DEFAULT_AVATAR = "../img/qq_small.jpg";
 
     @Resource(name = "userService")
     private UserService us;
 
     @Resource(name = "relationService")
     private RelationService rs;
+    @Resource(name = "roleService")
+    private RoleService ros;
+
     @RequestMapping("/user/findall")
     public String findAll(Model m){
         List<User> list = us.selectAll();
@@ -96,6 +104,10 @@ public class UserController {
 
 
 
+    @RequestMapping(value = "/login")
+    public String login(){
+        return "/login";
+    }
 
 
     /**
@@ -105,24 +117,34 @@ public class UserController {
      * @return
      */
     @RequestMapping(value = "/home")
-    public String subLogin(Model m, User user){
-        User u = us.selectByNumber(user.getNumber());
-        List<Relation> relations = rs.selectAllByNumber(u.getNumber());
-        m.addAttribute("relations", relations);
-        m.addAttribute("user", u);
-        Subject subject = SecurityUtils.getSubject();
-        UsernamePasswordToken token = new UsernamePasswordToken(user.getNumber(), user.getPassword());
-        try {
-            subject.login(token);
-        }
-        catch (Exception e){
-            return e.getMessage();
-        }
-        return "/user/home";
+    public String home(Model m, User user){
+//        //获取当前用户名
+//        Subject currentUser = SecurityUtils.getSubject();
+//        String number = (String) currentUser.getPrincipal();
+//        if (!currentUser.isAuthenticated()) {
+            User u = us.selectByNumber(user.getNumber());
+            List<Relation> relations = rs.selectAllByNumber(u.getNumber());
+            m.addAttribute("relations", relations);
+            m.addAttribute("user", u);
+            Subject subject = SecurityUtils.getSubject();
+            UsernamePasswordToken token = new UsernamePasswordToken(user.getNumber(), user.getPassword());
+            try {
+                subject.login(token);
+            }
+            catch (Exception e){
+                return e.getMessage();
+            }
+            return "/user/home";
+//        }else {
+//            return "/user/home";
+//        }
+
+
 //        if (subject.hasRole("admin")){
 ////            return "有admin权限";
 ////        }
 ////        return "无admin权限";
+
     }
 
     @RequestMapping(value = "/user/toRegPage")
@@ -139,6 +161,13 @@ public class UserController {
         Date date=new Date();
         java.sql.Date sqldate = new java.sql.Date(date.getTime());
         user.setCreateTime(sqldate);
+        user.setAvatar(DEFAULT_AVATAR);
+
+        Role role = new Role();
+        role.setName("student");
+        role.setUser(user);
+        ros.insert(role);
+
         // 插入数据库
         us.insert(user);
         System.out.println(user.getNumber() + "\t" + user.getPassword());
@@ -224,5 +253,72 @@ public class UserController {
         }else {
             return "/fail";
         }
+    }
+
+    /**
+     * 提交修改
+     */
+    @RequestMapping(value = "/user/forgetPassword", produces = "application/json;charset=utf-8")
+    public String forgetPassword(Model m, @RequestParam("number") String number){
+        User user = us.selectByNumber(number);
+        user.getEmail();
+        //todo
+        return null;
+    }
+
+    /**
+     * 到修改密码界面
+     */
+    @RequestMapping(value = "/user/toChangePassword", produces = "application/json;charset=utf-8")
+    public String toChangePassword(){
+        //获取当前用户名
+        Subject currentUser = SecurityUtils.getSubject();
+        String number = (String) currentUser.getPrincipal();
+        User user = us.selectByNumber(number);
+        String code = ToolUtil.getRandomNumberString(4);
+        user.setCode(code);
+        us.updateByNumber(user);
+
+        Boolean isSuccess = MailUtil.sendMail("修改密码", code,user.getEmail(),user.getName());
+        if (!isSuccess){
+            return "fail";
+        }
+        return "/user/changePassword";
+    }
+
+    /**
+     * 修改密码
+     */
+    @RequestMapping(value = "/user/doChangePassword")
+    public String doChangePassword(@RequestParam("password1") String password1, @RequestParam("password2") String password2, @RequestParam("code") String code){
+        // 修改密码后要重新登录
+        // todo
+        //获取当前用户名
+        Subject currentUser = SecurityUtils.getSubject();
+        String number = (String) currentUser.getPrincipal();
+        User user = us.selectByNumber(number);
+        if (password1!=null&&!"".equals(password1)&&password1.equals(password2)&&code!=null&&code.equals(user.getCode())){
+            Md5Hash md5Hash = new Md5Hash(password1, number);//a81082604404c078e80f8bf501133abe
+            user.setPassword(md5Hash.toString());
+            us.updatePasswordByNumber(user);
+        }else if (password1==null||"".equals(password1)||!password1.equals(password2)){
+            return "user/passwordDiff";
+        }else if(code==null||!code.equals(user.getCode())){
+            return "user/codeError";
+        }
+
+        return "redirect:/";
+    }
+
+
+    /**
+     * 退出
+     */
+    @RequestMapping(value = "/user/logout", produces = "application/json;charset=utf-8")
+    public String logout(Model m, User user){
+        Subject currentUser = SecurityUtils.getSubject();
+        currentUser.logout();
+        System.out.println(currentUser.isAuthenticated());
+        return "redirect:/";
     }
 }

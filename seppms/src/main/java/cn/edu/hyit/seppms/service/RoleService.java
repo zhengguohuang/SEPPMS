@@ -7,4 +7,6 @@ import java.util.List;
 public interface RoleService extends BaseService<Role> {
 
     List<String> getRolesByNumber(String number);
+
+    List<Role> selectAllByRoleName(String teacher);
 }

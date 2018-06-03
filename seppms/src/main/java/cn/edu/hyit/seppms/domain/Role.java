@@ -2,7 +2,7 @@ package cn.edu.hyit.seppms.domain;
 
 public class Role {
 	private Integer id;
-	private String number;
+	private User user;
 	private String name;
 
 	public Integer getId() {
@@ -13,12 +13,12 @@ public class Role {
 		this.id = id;
 	}
 
-	public String getNumber() {
-		return number;
+	public User getUser() {
+		return user;
 	}
 
-	public void setNumber(String number) {
-		this.number = number;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public String getName() {

@@ -5,16 +5,77 @@
 <mapper namespace="sys_role">
     <resultMap id="RM_Role" type="_Role">
         <id property="id" column="id" />
-        <result property="number" column="number"/>
         <result property="name" column="name"/>
+        <association property="user" javaType="_User">
+            <id property="id" column="uid"/>
+            <result property="number" column="number"/>
+        </association>
     </resultMap>
+
     <resultMap id="RM_RoleName" type="string">
         <result property="name" column="name"/>
     </resultMap>
+
+    <resultMap id="RM_RoleUser" type="_Role">
+        <id property="id" column="rid"/>
+        <result property="name" column="rname"/>
+        <association property="user" javaType="_User">
+            <id property="id" column="uid"/>
+            <result property="avatar" column="uavatar"/>
+            <result property="number" column="unumber"/>
+            <result property="name" column="uname"/>
+            <result property="sex" column="usex"/>
+            <result property="className" column="ucalssname"/>
+            <result property="email" column="uemail"/>
+            <result property="specialty" column="uspecialty"/>
+            <result property="hobby" column="uhobby"/>
+            <result property="status" column="ustatus"/>
+            <result property="createTime" column="ucreatetime"/>
+        </association>
+    </resultMap>
+
     <select id="getRolesByNumber" parameterType="string" resultMap="RM_RoleName">
         SELECT
           name
         FROM sys_role
         WHERE number = #{number}
+    </select>
+
+    <!--todo test-->
+    <update id="update" parameterType="_Role">
+        UPDATE sys_role
+        SET
+        name = #{name}
+        WHERE number = #{user.number}
+    </update>
+    <update id="insert" parameterType="_Role">
+        INSERT INTO sys_role(
+          id ,
+          number ,
+          name )
+        VALUES (
+          #{id},
+          #{user.number},
+          #{name})
+    </update>
+
+    <select id="selectAllByRoleName" parameterType="string" resultMap="RM_RoleUser">
+        SELECT
+          r.id rid,
+          r.name rname,
+          u.id uid,
+          u.avatar uavatar,
+          u.number unumber,
+          u.name uname,
+          u.sex usex,
+          u.classname uclassname,
+          u.email uemail,
+          u.specialty uspecialty,
+          u.hobby uhobby,
+          u.status ustatus,
+          u.createtime ucreatetime
+        FROM sys_role r
+        LEFT OUTER JOIN sys_user u ON r.number = u.number
+        WHERE r.name = #{name}
     </select>
 </mapper>

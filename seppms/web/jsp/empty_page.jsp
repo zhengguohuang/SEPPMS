@@ -23,14 +23,14 @@
 <body class="gray-bg">
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-sm-4">
-            <h2>标题</h2>
+            <h2>主页</h2>
             <ol class="breadcrumb">
                 <li>
-                    <a href="index.html">主页</a>
+                    <a href='<c:url value="/empty"/> '>主页</a>
                 </li>
-                <li>
-                    <strong>包屑导航</strong>
-                </li>
+                <%--<li>--%>
+                    <%--<strong>包屑导航</strong>--%>
+                <%--</li>--%>
             </ol>
         </div>
         <div class="col-sm-8">
@@ -44,11 +44,11 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="middle-box text-center animated fadeInRightBig">
-                    <h3 class="font-bold">这里是页面内容</h3>
+                    <h3 class="font-bold">欢迎使用软件工程过程管理系统</h3>
 
                     <div class="error-desc">
-                        您可以在这里添加栅格，参考首页及其他页面完成不同的布局
-                        <br/><a href="#" class="btn btn-primary m-t">打开主页</a>
+                        首次进入您可以加入小组或创建新的小组，在此之前您可以完善个人信息
+                        <br/><a href='<c:url value="/user/profile"/> ' class="btn btn-primary m-t">完善信息</a>
                     </div>
                 </div>
             </div>

@@ -145,4 +145,49 @@
         WHERE g.id = #{id}
     </select>
 
+    <insert id="insert" parameterType="_GroupInfo">
+        INSERT INTO group_info(
+        id,
+        name,
+        leaderid,
+        teacherid,
+        status,
+        createtime)
+        VALUES (
+        #{id},
+        #{name},
+        #{leader.id},
+        #{teacher.id},
+        #{status},
+        #{createTime})
+    </insert>
+
+
+    <select id="selectByLeaderId" parameterType="int" resultMap="RM_GroupInfo">
+        SELECT
+          g.id gid,
+          g.name gname,
+          g.leaderid lid,
+          l.avatar lavatar,
+          l.number lnumber,
+          l.name lname,
+          l.sex lsex,
+          l.classname lclassname,
+          l.email lemail,
+          l.specialty lspecialty,
+          l.hobby lhobby,
+          l.status lstatus,
+          l.createtime lcreatetime,
+          g.createtime gcreatetime,
+          g.status gstatus
+        FROM group_info g
+          LEFT OUTER JOIN sys_user l ON g.leaderid = l.id
+        WHERE g.leaderid = #{id}
+    </select>
+
+
+    <select id="selectGroupIdByLeaderId" resultType="int">
+        SELECT g.id FROM group_info g WHERE leaderid=#{id}
+    </select>
+
 </mapper>

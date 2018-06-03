@@ -2,8 +2,6 @@ package cn.edu.hyit.seppms.dao.impl;
 
 
 import cn.edu.hyit.seppms.dao.BaseDao;
-import cn.edu.hyit.seppms.domain.LeaderTask;
-import cn.edu.hyit.seppms.domain.Reply;
 import cn.edu.hyit.seppms.domain.Topic;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.stereotype.Repository;
@@ -13,12 +11,17 @@ import java.util.List;
 @Repository("topicDao")
 public class TopicDaoImpl extends SqlSessionDaoSupport implements BaseDao<Topic> {
 
-    public void insert(Topic topic) {
-        getSqlSession().insert("topic.insert", topic);
+    public Boolean insert(Topic topic) {
+        int rows = getSqlSession().insert("topic.insert", topic);
+        if(rows > 0){
+            return true;
+        }
+        return false;
     }
 
-    public void update(Topic topic) {
+    public Boolean update(Topic topic) {
 
+        return null;
     }
 
     public void delete(Integer id) {

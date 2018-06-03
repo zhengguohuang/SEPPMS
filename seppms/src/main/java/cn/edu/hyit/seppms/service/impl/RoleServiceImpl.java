@@ -27,4 +27,9 @@ public class RoleServiceImpl extends BaseServiceImpl<Role> implements RoleServic
     public List<String> getRolesByNumber(String number) {
         return dao.getRolesByNumber(number);
     }
+
+    @Override
+    public List<Role> selectAllByRoleName(String roleName) {
+        return dao.selectAllByRoleName(roleName);
+    }
 }

@@ -10,12 +10,20 @@ import java.util.List;
 
 @Repository("itemDao")
 public class ItemDaoImpl extends SqlSessionDaoSupport implements BaseDao<Item> {
-    public void insert(Item item) {
-        getSqlSession().insert("items.insert", item);
+    public Boolean insert(Item item) {
+        int rows = getSqlSession().insert("items.insert", item);
+        if(rows > 0){
+            return true;
+        }
+        return false;
     }
 
-    public void update(Item item) {
-        getSqlSession().update("items.update", item);
+    public Boolean update(Item item) {
+        int rows = getSqlSession().update("items.update", item);
+        if(rows > 0){
+            return true;
+        }
+        return false;
     }
 
     public void delete(Integer id) {

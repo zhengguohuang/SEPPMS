@@ -36,5 +36,6 @@
         <mapper resource="mapper/TopicMapper.xml"/>
         <mapper resource="mapper/RelationMapper.xml"/>
         <mapper resource="mapper/ReplyMapper.xml"/>
+        <mapper resource="mapper/MarkMapper.xml"/>
     </mappers>
 </configuration>
