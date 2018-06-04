@@ -25,6 +25,13 @@
     <!--扫描包组件-->
     <context:component-scan base-package="cn.edu.hyit.seppms.dao,cn.edu.hyit.seppms.service"/>
 
+    <!-- 定义文件解释器 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 设置默认编码 -->
+        <property name="defaultEncoding" value="utf-8"></property>
+        <!-- 上传图片最大大小5M-->
+        <property name="maxUploadSize" value="5242440"></property>
+    </bean>
 
 
 

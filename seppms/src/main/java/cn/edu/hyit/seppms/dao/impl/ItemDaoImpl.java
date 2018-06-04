@@ -39,12 +39,10 @@ public class ItemDaoImpl extends SqlSessionDaoSupport implements BaseDao<Item> {
     }
 
     public List<Item> selectPage(int offset, int len) {
-        //TODO
         return null;
     }
 
     public int selectCount() {
-        //TODO
         return 0;
     }
 }

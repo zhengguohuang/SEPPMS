@@ -57,7 +57,7 @@
                                                 <span class="label label-primary">进行中</span>
                                             </td>
                                             <td class="project-title">
-                                                <a href="project_detail.html">${l.process.name}</a>
+                                                <a href='<c:url value="/info/toLeaderTaskDetailPage?leaderTaskId=${l.id}"/>' >${l.process.name}</a>
                                                 <br/>
                                                 <small>创建于 ${l.process.startTime}</small>
                                             </td>
@@ -68,8 +68,8 @@
                                                 </div>
                                             </td>
                                             <td class="project-actions">
-                                                <a href="" class="btn btn-white btn-sm"><i class="fa fa-search"></i> 查看详情 </a>
-                                                <a href="tasks.html#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 提交任务 </a>
+                                                <a href='<c:url value="/info/toLeaderTaskDetailPage?leaderTaskId=${l.id}"/>' class="btn btn-white btn-sm"><i class="fa fa-search"></i> 查看详情 </a>
+                                                <a href='<c:url value="/info/toSubmitLeaderTaskPage?leaderTaskId=${l.id}"/> ' class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 提交任务 </a>
                                             </td>
                                         </tr>
                                     </c:forEach>

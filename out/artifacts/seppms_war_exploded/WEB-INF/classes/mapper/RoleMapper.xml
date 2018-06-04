@@ -41,7 +41,6 @@
         WHERE number = #{number}
     </select>
 
-    <!--todo test-->
     <update id="update" parameterType="_Role">
         UPDATE sys_role
         SET

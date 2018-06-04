@@ -132,7 +132,8 @@ public class UserController {
                 subject.login(token);
             }
             catch (Exception e){
-                return e.getMessage();
+                m.addAttribute("exception", e.getMessage());
+                return "fail";
             }
             return "/user/home";
 //        }else {
@@ -292,7 +293,6 @@ public class UserController {
     @RequestMapping(value = "/user/doChangePassword")
     public String doChangePassword(@RequestParam("password1") String password1, @RequestParam("password2") String password2, @RequestParam("code") String code){
         // 修改密码后要重新登录
-        // todo
         //获取当前用户名
         Subject currentUser = SecurityUtils.getSubject();
         String number = (String) currentUser.getPrincipal();
@@ -310,6 +310,72 @@ public class UserController {
         return "redirect:/";
     }
 
+
+    /**
+     * 到修改密码界面
+     */
+    @RequestMapping(value = "/user/toForgetPassword", produces = "application/json;charset=utf-8")
+    public String toForgetPassword(){
+        return "/user/forgetPassword";
+    }
+
+
+    /**
+     * 忘记密码2
+     */
+    @RequestMapping(value = "/user/toForgetPassword2", produces = "application/json;charset=utf-8")
+    public String toForgetPassword2(Model m, @RequestParam("number") String number){
+        // 根据number 获得user
+        User user = us.getUserByNumber(number);
+        m.addAttribute("user", user);
+
+        // 发邮件
+        String code = ToolUtil.getRandomNumberString(4);
+        user.setCode(code);
+        us.updateByNumber(user);
+        Boolean isSuccess = MailUtil.sendMail("修改密码", code,user.getEmail(),user.getName());
+        if (!isSuccess){
+            return "fail";
+        }
+
+        return "/user/forgetPassword2";
+    }
+
+    /**
+     * 忘记密码3
+     */
+    @RequestMapping(value = "/user/toForgetPassword3", produces = "application/json;charset=utf-8")
+    public String toForgetPassword3(Model m, @RequestParam("code") String code, @RequestParam("number") String number){
+        // 根据number 获得user
+        User user = us.getUserByNumber(number);
+        user.setCode(code);
+        m.addAttribute("user", user);
+
+        if (code!=null&&code.equals(user.getCode())){
+            return "/user/forgetPassword3";
+        }else{
+            return "user/codeError";
+        }
+
+    }
+
+
+    /**
+     * 忘记密码
+     */
+    @RequestMapping(value = "/user/doForgetPassword", produces = "application/json;charset=utf-8")
+    public String doForgetPassword(Model m, @RequestParam("password") String password, @RequestParam("number") String number){
+        // 根据number 获得user
+        User user = us.getUserByNumber(number);
+
+        System.out.println(password);
+        System.out.println(number);
+        // 更新密码
+        Md5Hash md5Hash = new Md5Hash(password, number);//a81082604404c078e80f8bf501133abe
+        user.setPassword(md5Hash.toString());
+        us.updatePasswordByNumber(user);
+        return "redirect:/";
+    }
 
     /**
      * 退出

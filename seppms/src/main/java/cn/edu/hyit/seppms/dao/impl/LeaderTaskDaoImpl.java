@@ -26,7 +26,7 @@ public class LeaderTaskDaoImpl extends SqlSessionDaoSupport implements BaseDao<L
     }
 
     public LeaderTask selectOne(Integer id) {
-        return null;
+        return getSqlSession().selectOne("leader_task.selectOne", id);
     }
 
     public List<LeaderTask> selectAll() {

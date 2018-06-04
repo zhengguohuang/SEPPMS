@@ -80,5 +80,6 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements BaseDao<User> {
     }
 
     public void updatePasswordByNumber(User user) {
+        getSqlSession().update("sys_user.updatePasswordByNumber", user);
     }
 }

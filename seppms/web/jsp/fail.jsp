@@ -18,6 +18,7 @@
         <h3 class="font-bold">操作未成功</h3>
         <div class="error-desc">
             好像出错了...
+            ${exception}
             <br/>您可以返回主页看看
             <br/><a href='<c:url value="/empty"/> ' class="btn btn-primary m-t">主页</a>
         </div>

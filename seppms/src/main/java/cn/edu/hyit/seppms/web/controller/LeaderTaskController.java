@@ -9,6 +9,7 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -31,5 +32,29 @@ public class LeaderTaskController {
         List<LeaderTask> list = lts.selectAllLeaderTaskByMemberNumber(number);
         m.addAttribute("list", list);
         return "/info/leaderTasks";
+    }
+
+    /**
+     * 到任务详情页面
+     * @param m
+     * @return
+     */
+    @RequestMapping("/info/toLeaderTaskDetailPage")
+    public String toLeaderTaskDetailPage(Model m, @RequestParam("leaderTaskId") Integer leaderTaskId ){
+        LeaderTask leaderTask = lts.selectOne(leaderTaskId);
+        m.addAttribute("leaderTask", leaderTask);
+        return "/info/leaderTaskDetail";
+    }
+
+    /**
+     * 到提交任务页面
+     * @param m
+     * @return
+     */
+    @RequestMapping("/info/toSubmitLeaderTaskPage")
+    public String toSubmitLeaderTaskPage(Model m, @RequestParam("leaderTaskId") Integer leaderTaskId ){
+
+        m.addAttribute("leaderTaskId", leaderTaskId);
+        return "/info/submitLeaderTask";
     }
 }

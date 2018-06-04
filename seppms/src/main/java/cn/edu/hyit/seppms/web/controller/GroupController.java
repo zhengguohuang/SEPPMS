@@ -114,7 +114,6 @@ public class GroupController {
         return "/group/createGroup";
     }
 
-    //todo
     /**
      * 创建小组
      * @return
