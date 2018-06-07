@@ -7,53 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d3cdd8d-fc95-435d-864a-22a7cfcd6c08" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/TeacherController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/seppms/web/js/plugins/datapicker/bootstrap-datepicker.zh-CN.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/seppms/web/jsp/group/castLeaderTask.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/seppms/web/jsp/group/members.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/seppms/web/jsp/group/processManage.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/seppms/web/jsp/teacher/clients.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/seppms/web/jsp/teacher/clients.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/seppms/web/jsp/teacher/submitTeacherTaskFile.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/seppms/web/jsp/teacher/teacherHome.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/seppms/web/jsp/teacher/teacherTask.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/seppms/web/jsp/user/leaderHome.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sql/seppms.sql" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/cn/edu/hyit/seppms/dao/impl/BelongDaoImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/cn/edu/hyit/seppms/dao/impl/BelongDaoImpl.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/cn/edu/hyit/seppms/dao/impl/GroupInfoDaoImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/cn/edu/hyit/seppms/dao/impl/GroupInfoDaoImpl.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/cn/edu/hyit/seppms/service/BelongService.class" afterPath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/cn/edu/hyit/seppms/service/BelongService.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/cn/edu/hyit/seppms/service/impl/BelongServiceImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/cn/edu/hyit/seppms/service/impl/BelongServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/cn/edu/hyit/seppms/web/controller/GroupController.class" afterPath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/cn/edu/hyit/seppms/web/controller/GroupController.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/cn/edu/hyit/seppms/web/controller/UserController.class" afterPath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/cn/edu/hyit/seppms/web/controller/UserController.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/mapper/BelongMapper.xml" afterPath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/mapper/BelongMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/mapper/GroupInfoMapper.xml" afterPath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/mapper/GroupInfoMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/mysql.properties" afterPath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/mysql.properties" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/spring/applicationContext-shiro.xml" afterPath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/WEB-INF/classes/spring/applicationContext-shiro.xml" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/js/plugins/datapicker/bootstrap-datepicker.js" afterPath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/js/plugins/datapicker/bootstrap-datepicker.js" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/jsp/group/showGroups.jsp" afterPath="$PROJECT_DIR$/out/artifacts/seppms_war_exploded/jsp/group/showGroups.jsp" />
-      <change beforePath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/dao/impl/BelongDaoImpl.java" afterPath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/dao/impl/BelongDaoImpl.java" />
-      <change beforePath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/dao/impl/GroupInfoDaoImpl.java" afterPath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/dao/impl/GroupInfoDaoImpl.java" />
-      <change beforePath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/service/BelongService.java" afterPath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/service/BelongService.java" />
-      <change beforePath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/service/impl/BelongServiceImpl.java" afterPath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/service/impl/BelongServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/GroupController.java" afterPath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/GroupController.java" />
-      <change beforePath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/UserController.java" afterPath="$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/web/controller/UserController.java" />
-      <change beforePath="$PROJECT_DIR$/seppms/src/main/resources/mapper/BelongMapper.xml" afterPath="$PROJECT_DIR$/seppms/src/main/resources/mapper/BelongMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/seppms/src/main/resources/mapper/GroupInfoMapper.xml" afterPath="$PROJECT_DIR$/seppms/src/main/resources/mapper/GroupInfoMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/seppms/src/main/resources/mapper/LeaderTaskMapper.xml" afterPath="$PROJECT_DIR$/seppms/src/main/resources/mapper/LeaderTaskMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/seppms/src/main/resources/mysql.properties" afterPath="$PROJECT_DIR$/seppms/src/main/resources/mysql.properties" />
-      <change beforePath="$PROJECT_DIR$/seppms/src/main/resources/spring/applicationContext-shiro.xml" afterPath="$PROJECT_DIR$/seppms/src/main/resources/spring/applicationContext-shiro.xml" />
-      <change beforePath="$PROJECT_DIR$/seppms/target/classes/cn/edu/hyit/seppms/dao/impl/BelongDaoImpl.class" afterPath="$PROJECT_DIR$/seppms/target/classes/cn/edu/hyit/seppms/dao/impl/BelongDaoImpl.class" />
-      <change beforePath="$PROJECT_DIR$/seppms/target/classes/cn/edu/hyit/seppms/dao/impl/GroupInfoDaoImpl.class" afterPath="$PROJECT_DIR$/seppms/target/classes/cn/edu/hyit/seppms/dao/impl/GroupInfoDaoImpl.class" />
-      <change beforePath="$PROJECT_DIR$/seppms/target/classes/cn/edu/hyit/seppms/service/BelongService.class" afterPath="$PROJECT_DIR$/seppms/target/classes/cn/edu/hyit/seppms/service/BelongService.class" />
-      <change beforePath="$PROJECT_DIR$/seppms/target/classes/cn/edu/hyit/seppms/service/impl/BelongServiceImpl.class" afterPath="$PROJECT_DIR$/seppms/target/classes/cn/edu/hyit/seppms/service/impl/BelongServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/seppms/target/classes/cn/edu/hyit/seppms/web/controller/GroupController.class" afterPath="$PROJECT_DIR$/seppms/target/classes/cn/edu/hyit/seppms/web/controller/GroupController.class" />
-      <change beforePath="$PROJECT_DIR$/seppms/target/classes/cn/edu/hyit/seppms/web/controller/UserController.class" afterPath="$PROJECT_DIR$/seppms/target/classes/cn/edu/hyit/seppms/web/controller/UserController.class" />
-      <change beforePath="$PROJECT_DIR$/seppms/target/classes/mapper/BelongMapper.xml" afterPath="$PROJECT_DIR$/seppms/target/classes/mapper/BelongMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/seppms/target/classes/mapper/GroupInfoMapper.xml" afterPath="$PROJECT_DIR$/seppms/target/classes/mapper/GroupInfoMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/seppms/target/classes/mysql.properties" afterPath="$PROJECT_DIR$/seppms/target/classes/mysql.properties" />
-      <change beforePath="$PROJECT_DIR$/seppms/target/classes/spring/applicationContext-shiro.xml" afterPath="$PROJECT_DIR$/seppms/target/classes/spring/applicationContext-shiro.xml" />
-      <change beforePath="$PROJECT_DIR$/seppms/web/js/plugins/datapicker/bootstrap-datepicker.js" afterPath="$PROJECT_DIR$/seppms/web/js/plugins/datapicker/bootstrap-datepicker.js" />
-      <change beforePath="$PROJECT_DIR$/seppms/web/jsp/group/showGroups.jsp" afterPath="$PROJECT_DIR$/seppms/web/jsp/group/showGroups.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/seppms/target/" />
@@ -93,16 +48,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teacherHome.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/seppms/web/jsp/teacher/teacherHome.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="696">
-              <caret line="79" column="84" lean-forward="false" selection-start-line="79" selection-start-column="71" selection-end-line="79" selection-end-column="84" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="clients.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/seppms/web/jsp/teacher/clients.jsp">
           <provider selected="true" editor-type-id="text-editor">
@@ -123,11 +68,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mail.properties" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mail.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/seppms/src/main/resources/mail.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="377">
               <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="seppms.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sql/seppms.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -387,112 +342,6 @@
               <item name="seppms" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="idea-seppms-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="idea-seppms-project" type="462c0819:PsiDirectoryNode" />
-              <item name="seppms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="idea-seppms-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="idea-seppms-project" type="462c0819:PsiDirectoryNode" />
-              <item name="seppms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="idea-seppms-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="idea-seppms-project" type="462c0819:PsiDirectoryNode" />
-              <item name="seppms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="seppms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="idea-seppms-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="idea-seppms-project" type="462c0819:PsiDirectoryNode" />
-              <item name="seppms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="seppms" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="idea-seppms-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="idea-seppms-project" type="462c0819:PsiDirectoryNode" />
-              <item name="seppms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="seppms" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="idea-seppms-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="idea-seppms-project" type="462c0819:PsiDirectoryNode" />
-              <item name="seppms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="idea-seppms-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="idea-seppms-project" type="462c0819:PsiDirectoryNode" />
-              <item name="seppms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="idea-seppms-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="idea-seppms-project" type="462c0819:PsiDirectoryNode" />
-              <item name="seppms" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="idea-seppms-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="idea-seppms-project" type="462c0819:PsiDirectoryNode" />
-              <item name="seppms" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="jsp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="idea-seppms-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="idea-seppms-project" type="462c0819:PsiDirectoryNode" />
-              <item name="seppms" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="jsp" type="462c0819:PsiDirectoryNode" />
-              <item name="group" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="idea-seppms-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="idea-seppms-project" type="462c0819:PsiDirectoryNode" />
-              <item name="seppms" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="jsp" type="462c0819:PsiDirectoryNode" />
-              <item name="info" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="idea-seppms-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="idea-seppms-project" type="462c0819:PsiDirectoryNode" />
-              <item name="seppms" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="jsp" type="462c0819:PsiDirectoryNode" />
-              <item name="teacher" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="idea-seppms-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="idea-seppms-project" type="462c0819:PsiDirectoryNode" />
-              <item name="seppms" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="jsp" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -519,6 +368,16 @@
       <recent name="cn.edu.hyit.seppms.util" />
       <recent name="cn.edu.hyit.seppms.service.impl" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CodeRepository\SEPPMS\idea-seppms-project\seppms\web\jsp\group" />
+      <recent name="D:\CodeRepository\SEPPMS\idea-seppms-project\seppms\web\jsp\teacher" />
+      <recent name="D:\CodeRepository\SEPPMS\idea-seppms-project\seppms\src\main\resources\mapper" />
+      <recent name="D:\CodeRepository\SEPPMS\idea-seppms-project\seppms\src\main\resources\mybatis" />
+      <recent name="D:\CodeRepository\SEPPMS\idea-seppms-project\seppms\web\jsp" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="cn.edu.hyit.seppms.web.controller" />
       <recent name="cn.edu.hyit.seppms.dao.impl" />
@@ -527,21 +386,11 @@
       <recent name="cn.edu.hyit.seppms.util" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CodeRepository\SEPPMS\idea-seppms-project\sql" />
       <recent name="D:\CodeRepository\SEPPMS\idea-seppms-project\seppms\web\jsp\group" />
       <recent name="D:\CodeRepository\SEPPMS\idea-seppms-project\seppms\web\jsp\teacher" />
       <recent name="D:\CodeRepository\SEPPMS\idea-seppms-project\seppms\web\jsp\user" />
       <recent name="D:\CodeRepository\SEPPMS\idea-seppms-project\seppms\web\jsp\info" />
-      <recent name="D:\CodeRepository\SEPPMS\idea-seppms-project\seppms\web\js\plugins\datapicker" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\CodeRepository\SEPPMS\idea-seppms-project\seppms\web\jsp\group" />
-      <recent name="D:\CodeRepository\SEPPMS\idea-seppms-project\seppms\web\jsp\teacher" />
-      <recent name="D:\CodeRepository\SEPPMS\idea-seppms-project\seppms\src\main\resources\mapper" />
-      <recent name="D:\CodeRepository\SEPPMS\idea-seppms-project\seppms\src\main\resources\mybatis" />
-      <recent name="D:\CodeRepository\SEPPMS\idea-seppms-project\seppms\web\jsp" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -946,7 +795,8 @@
     <MESSAGE value="新增评论功能" />
     <MESSAGE value="实现new Topic功能" />
     <MESSAGE value="+修改密码&#10;+我的成绩&#10;+完善注册" />
-    <option name="LAST_COMMIT_MESSAGE" value="+修改密码&#10;+我的成绩&#10;+完善注册" />
+    <MESSAGE value="finish" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1046,13 +896,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/service/impl/LeaderTaskServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="33" column="54" lean-forward="false" selection-start-line="33" selection-start-column="54" selection-end-line="33" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/seppms/src/main/java/cn/edu/hyit/seppms/service/MarkService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
@@ -1490,6 +1333,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
           <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/seppms.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
