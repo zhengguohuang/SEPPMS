@@ -190,4 +190,11 @@
         SELECT g.id FROM group_info g WHERE leaderid=#{id}
     </select>
 
+    <update id="update" parameterType="_GroupInfo">
+        UPDATE group_info
+        SET
+        status = #{status}
+        WHERE id = #{id}
+    </update>
+
 </mapper>

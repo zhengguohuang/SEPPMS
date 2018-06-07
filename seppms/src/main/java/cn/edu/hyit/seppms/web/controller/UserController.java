@@ -119,7 +119,7 @@ public class UserController {
     @RequestMapping(value = "/home")
     public String home(Model m, User user){
 //        //获取当前用户名
-//        Subject currentUser = SecurityUtils.getSubject();
+        Subject currentUser = SecurityUtils.getSubject();
 //        String number = (String) currentUser.getPrincipal();
 //        if (!currentUser.isAuthenticated()) {
             User u = us.selectByNumber(user.getNumber());
@@ -134,6 +134,12 @@ public class UserController {
             catch (Exception e){
                 m.addAttribute("exception", e.getMessage());
                 return "fail";
+            }
+
+            if(currentUser.hasRole("teacher")){
+                return "/teacher/teacherHome";
+            } else if (currentUser.hasRole("leader")){
+                return "/user/leaderHome";
             }
             return "/user/home";
 //        }else {

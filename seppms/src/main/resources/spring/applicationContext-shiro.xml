@@ -16,7 +16,7 @@
                 # 如果用户没有该角色，然后访问该 路径 会报 401错误
 
                 /admin/** = authc, roles[admin]
-                /techer/** = authc, roles[teacher]
+                /teacher/** = authc, roles[teacher]
                 /student/** = authc, roles[student]
                 /leader/** = authc, roles[leader]
 
@@ -26,7 +26,9 @@
                 /doReg = anon
                 /home = anon
                 /user/** = anon
+                /info/** = anon
                 /logout = logout
+
 
 
                 # 配置静态资源可以匿名访问

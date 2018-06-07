@@ -19,7 +19,11 @@ public class GroupInfoDaoImpl extends SqlSessionDaoSupport implements BaseDao<Gr
 
     public Boolean update(GroupInfo groupInfo) {
 
-        return null;
+        int rows = getSqlSession().update("group_info.update", groupInfo);
+        if (rows>0){
+            return true;
+        }
+        return false;
     }
 
     public void delete(Integer id) {

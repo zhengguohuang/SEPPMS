@@ -41,6 +41,48 @@
         WHERE b.groupid = #{groupId};
     </select>
 
+    <select id="selectMemberByLeaderId" parameterType="int" resultMap="RM_Belong">
+        SELECT
+          b.id bid,
+          b.userid uid,
+          u.avatar uavatar,
+          u.number unumber,
+          u.name uname,
+          u.sex usex,
+          u.classname uclassname,
+          u.email uemail,
+          u.specialty uspecialty,
+          u.hobby uhobby,
+          u.status ustatus,
+          u.createtime ucreatetime,
+          b.groupid bgroutid
+        FROM belong b
+          left OUTER JOIN sys_user u ON b.userid = u.id
+          LEFT OUTER JOIN group_info g ON b.groupid = g.id
+        WHERE  g.leaderid = #{id};
+    </select>
+
+    <select id="selectAllStudent" resultMap="RM_Belong">
+        SELECT
+        b.id bid,
+        b.userid uid,
+        u.avatar uavatar,
+        u.number unumber,
+        u.name uname,
+        u.sex usex,
+        u.classname uclassname,
+        u.email uemail,
+        u.specialty uspecialty,
+        u.hobby uhobby,
+        u.status ustatus,
+        u.createtime ucreatetime,
+        b.groupid bgroutid
+        FROM belong b
+        left OUTER JOIN sys_user u ON b.userid = u.id
+        LEFT OUTER JOIN group_info g ON b.groupid = g.id
+    </select>
+
+
     <select id="getGroupCountByUserId" parameterType="int" resultType="int">
         SELECT count(*) FROM belong WHERE userid = #{userId}
     </select>

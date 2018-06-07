@@ -30,8 +30,10 @@
                     <div class="ibox-title">
                         <h5>所有小组</h5>
                         <div class="ibox-tools">
-                            <c:if test="${'0' == isHasGroup}">
-                                <a href='<c:url value="/group/toCreateGroup"/> ' class="btn btn-primary btn-xs">创建新组</a>
+                            <c:if test="${'0' == isTeacher}">
+                                <c:if test="${'0' == isHasGroup}">
+                                    <a href='<c:url value="/group/toCreateGroup"/> ' class="btn btn-primary btn-xs">创建新组</a>
+                                </c:if>
                             </c:if>
 
                         </div>
@@ -83,7 +85,19 @@
                                             <td class="project-actions">
                                                 <a href='<c:url value="/group/groupDetail?gid=${g.id}"/> ' class="btn btn-white btn-sm"><i class="fa fa-search"></i> 查看详情 </a>
                                                 <c:if test="${'0' == isHasGroup}">
-                                                    <a href='<c:url value="/group/joinGroup?groupId=${g.id}"/> ' class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 申请加入 </a>
+                                                    <c:if test="${'0' == isTeacher}">
+                                                        <a href='<c:url value="/group/joinGroup?groupId=${g.id}"/> ' class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 申请加入 </a>
+                                                    </c:if>
+                                                </c:if>
+                                                <c:if test="${'1' == isTeacher}">
+                                                    <c:if test="${'0' == g.status}">
+                                                        <a href='<c:url value="/group/checkGroup?groupId=${g.id}"/> ' class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 确认小组 </a>
+                                                    </c:if>
+                                                </c:if>
+                                                <c:if test="${'1' == isTeacher}">
+                                                    <c:if test="${'1' == g.status}">
+                                                        <a href='<c:url value="/group/toProcessManage?groupId=${g.id}"/> ' class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 过程管理 </a>
+                                                    </c:if>
                                                 </c:if>
                                             </td>
                                         </tr>

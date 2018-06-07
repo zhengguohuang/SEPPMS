@@ -48,6 +48,9 @@ public class GroupController {
         String number = (String) currentUser.getPrincipal();
         User user = us.selectByNumber(number);
         int isHasGroup = bs.getGroupCountByUserId(user.getId());
+        boolean isT = currentUser.hasRole("teacher");
+        int isTeacher = isT?1:0;
+        m.addAttribute("isTeacher", isTeacher);
         m.addAttribute("isHasGroup", isHasGroup);
         return "/group/showGroups";
     }
@@ -158,6 +161,59 @@ public class GroupController {
         } else {
             return "/group/joinFail";
         }
+    }
+
+    /**
+     * 确认小组
+     * @return
+     */
+    @RequestMapping("/group/checkGroup")
+    public String checkGroup(@RequestParam("groupId") Integer groupId){
+        GroupInfo groupInfo = new GroupInfo();
+        groupInfo.setId(groupId);
+        groupInfo.setStatus(1);
+        gs.update(groupInfo);
+        return "redirect:/group/findAll";
+    }
+
+
+    /**
+     * 过程管理
+     */
+    @RequestMapping("/group/toProcessManage")
+    public String processManage(Model m, @RequestParam("groupId") Integer groupId){
+
+        GroupInfo group = gs.selectOne(groupId);
+        m.addAttribute("group", group);
+
+
+        return "/group/processManage";
+    }
+
+    /**
+     * 分配任务
+     */
+    @RequestMapping("/group/toMemberList")
+    public String toCastLeaderTask(Model m){
+//        List<User> users = us.selectAll();
+//        m.addAttribute("users", users);
+        //获取当前用户
+        Subject currentUser = SecurityUtils.getSubject();
+        String number = (String) currentUser.getPrincipal();
+        User user = us.selectByNumber(number);
+        List<Belong> belongs = bs.selectMemberByLeaderId(user.getId());
+        m.addAttribute("belongs", belongs);
+        return "/group/members";
+    }
+
+    /**
+     * 转到组长分配任务页面
+     */
+    @RequestMapping("/group/toLeaderCastTaskPage")
+    public String toLeaderCastTaskPage(Model m, @RequestParam("memberId") int memberId){
+        User user = us.selectOne(memberId);
+        m.addAttribute("user", user);
+        return "/group/castLeaderTask";
     }
 
 }

@@ -46,4 +46,12 @@ public class BelongDaoImpl extends SqlSessionDaoSupport implements BaseDao<Belon
     public int getGroupCountByUserId(Integer userId) {
         return getSqlSession().selectOne("belong.getGroupCountByUserId", userId);
     }
+
+    public List<Belong> selectMemberByLeaderId(Integer id) {
+        return getSqlSession().selectList("belong.selectMemberByLeaderId", id);
+    }
+
+    public List<Belong> selectAllStudent() {
+        return getSqlSession().selectList("belong.selectAllStudent");
+    }
 }

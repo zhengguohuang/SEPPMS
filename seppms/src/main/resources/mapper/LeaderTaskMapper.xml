@@ -27,6 +27,7 @@
         LEFT OUTER JOIN sys_user m ON lt.memberid = m.id
         LEFT OUTER JOIN process p ON lt.processid = p.id
         WHERE m.number = #{number}
+
     </select>
 
     <select id="selectOne" parameterType="int" resultMap="RM_LeaderTask">
